@@ -4,16 +4,14 @@ import { container } from './style.css'
 class ShadeContainerNarrow extends HTMLElement {
 	constructor() {
 		super()
+		this.classList.add(container)
 	}
 
 	connectedCallback() {
-		this.classList.add(container)
 		// defineCSS(window.document.body.style, {
 		// })
-
 		// const containerBackgroundColor =
 		// 	this.getAttribute('color') ?? 'var(--L1)'
-
 		// defineCSS(this.style, {
 		// })
 	}
