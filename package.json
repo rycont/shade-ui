@@ -1,0 +1,13 @@
+{
+	"devDependencies": {
+		"@vanilla-extract/vite-plugin": "^4.0.7",
+		"vite": "^5.2.10"
+	},
+	"dependencies": {
+		"@vanilla-extract/css": "^1.14.2"
+	},
+	"scripts": {
+		"dev": "vite dev"
+	},
+	"name": "shade-ui"
+}
