@@ -6,6 +6,10 @@ export const inputStyle = style({
 	padding: '3rem 4rem',
 	borderRadius: '3rem',
 	outlineColor: vars.color.L7,
+	backgroundColor: vars.color.L1,
+	display: 'block',
+	width: '100%',
+	boxSizing: 'border-box',
 	'::placeholder': {
 		color: vars.color.L7,
 	},
