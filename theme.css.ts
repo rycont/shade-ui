@@ -13,9 +13,9 @@ export const vars = createGlobalTheme(':root', {
 		L2: '#f6f7fa',
 		L1: '#fcfcfd',
 	},
-	font: {
-		body: 'arial',
-	},
+	timing: {
+		ease: "500ms cubic-bezier(0, 0.8, 0, 1)"
+	}
 })
 
 globalStyle(':root', {
