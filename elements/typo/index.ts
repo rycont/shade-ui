@@ -7,7 +7,9 @@ class ShadeTitle extends HTMLElement {
 	}
 }
 
-customElements.define('sh-title', ShadeTitle)
+const TITLE = 'sh-title'
+
+customElements.define(TITLE, ShadeTitle)
 
 class ShadeSmallText extends HTMLElement {
 	constructor() {
@@ -16,4 +18,8 @@ class ShadeSmallText extends HTMLElement {
 	}
 }
 
-customElements.define('sh-small-text', ShadeSmallText)
+const SMALL_TEXT = 'sh-small-text'
+
+customElements.define(SMALL_TEXT, ShadeSmallText)
+
+export { TITLE, SMALL_TEXT }
