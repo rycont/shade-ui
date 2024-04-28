@@ -14,8 +14,8 @@ export const vars = createGlobalTheme(':root', {
 		L1: '#fcfcfd',
 	},
 	timing: {
-		ease: "500ms cubic-bezier(0, 0.8, 0, 1)"
-	}
+		ease: '500ms cubic-bezier(0, 0.8, 0, 1)',
+	},
 })
 
 globalStyle(':root', {
