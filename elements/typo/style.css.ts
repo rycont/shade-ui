@@ -9,3 +9,8 @@ export const smallText = style({
 	fontSize: '4rem',
 	fontWeight: '500',
 })
+
+export const subtitle = style({
+	fontSize: '4.5rem',
+	fontWeight: '800',
+})
