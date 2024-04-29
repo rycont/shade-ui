@@ -1,4 +1,4 @@
-import { createGlobalTheme, globalStyle } from '@vanilla-extract/css'
+import { createGlobalTheme, globalStyle, keyframes } from '@vanilla-extract/css'
 
 export const vars = createGlobalTheme(':root', {
 	color: {
@@ -16,6 +16,9 @@ export const vars = createGlobalTheme(':root', {
 	timing: {
 		ease: '500ms cubic-bezier(0, 0.8, 0, 1)',
 	},
+	shadow: {
+		card: '0rem 1rem 6rem rgba(0, 0, 0, 0.06)',
+	},
 })
 
 globalStyle(':root', {
@@ -25,4 +28,16 @@ globalStyle(':root', {
 globalStyle('body', {
 	margin: 0,
 	fontSize: '4rem',
+})
+
+export const shake = keyframes({
+	'0%': { transform: 'rotate(-20deg)' },
+	'50%': { transform: 'rotate(20deg)' },
+	'100%': { transform: 'rotate(-20deg)' },
+})
+
+export const shakeSmall = keyframes({
+	'0%': { transform: 'rotate(-2deg)' },
+	'50%': { transform: 'rotate(2deg)' },
+	'100%': { transform: 'rotate(-2deg)' },
 })

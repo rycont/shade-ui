@@ -11,7 +11,7 @@ export const container = style({
 	margin: '0px auto',
 	padding: '6rem',
 	boxSizing: 'border-box',
-	overflowY: 'auto',
+	overflowX: 'visible',
 })
 
 globalStyle('body', {

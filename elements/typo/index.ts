@@ -1,3 +1,4 @@
+import { DefineOnce } from '../../util'
 import { title } from './style.css'
 
 class ShadeTitle extends HTMLElement {
@@ -6,20 +7,19 @@ class ShadeTitle extends HTMLElement {
 		this.classList.add(title)
 	}
 }
-
 const TITLE = 'sh-title'
-
-customElements.define(TITLE, ShadeTitle)
+DefineOnce.define(TITLE, ShadeTitle)
 
 class ShadeSmallText extends HTMLElement {
 	constructor() {
 		super()
+	}
+
+	connectedCallback() {
 		this.classList.add(title)
 	}
 }
-
 const SMALL_TEXT = 'sh-small-text'
-
-customElements.define(SMALL_TEXT, ShadeSmallText)
+DefineOnce.define(SMALL_TEXT, ShadeSmallText)
 
 export { TITLE, SMALL_TEXT }
