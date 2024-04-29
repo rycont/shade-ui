@@ -5,6 +5,7 @@ export const wrapperStyle = style({
 	border: `2px solid ${vars.color.L3}`,
 	display: 'flex',
 	alignItems: 'center',
+	justifyContent: 'space-between',
 	width: '100%',
 	boxSizing: 'border-box',
 	transition: vars.timing.ease,
@@ -34,6 +35,11 @@ export const inputStyle = style({
 	},
 	[`.${wrapperStyle}:hover > &:disabled::placeholder`]: {
 		color: vars.color.L5,
+	},
+	'&[type=color]': {
+		height: '11rem',
+		width: '20rem',
+		flex: 'revert',
 	},
 })
 

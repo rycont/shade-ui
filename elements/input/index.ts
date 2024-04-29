@@ -46,6 +46,14 @@ class ShadeInput extends HTMLElement {
 			'value',
 			'autofocus',
 			'disabled',
+			'max',
+			'min',
+			'list',
+			'readonly',
+			'step',
+			'pattern',
+			'inputmode',
+			'name',
 		])
 	}
 
