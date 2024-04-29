@@ -12,6 +12,7 @@ export const vars = createGlobalTheme(':root', {
 		L3: '#ebecf5',
 		L2: '#f6f7fa',
 		L1: '#fcfcfd',
+		skyblue: '#8099FF',
 	},
 	timing: {
 		ease: '500ms cubic-bezier(0, 0.8, 0, 1)',

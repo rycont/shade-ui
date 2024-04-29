@@ -14,3 +14,8 @@ export const subtitle = style({
 	fontSize: '4.5rem',
 	fontWeight: '800',
 })
+
+export const textContent = style({
+	fontSize: '4.5rem',
+	fontWeight: '500',
+})

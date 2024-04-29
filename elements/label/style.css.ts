@@ -11,3 +11,13 @@ export const labelWrapper = style({
 	flexDirection: 'column',
 	gap: '1rem',
 })
+
+export const descriptionStyle = style({
+	color: vars.color.L6,
+})
+
+export const messageStyle = style({
+	color: vars.color.skyblue,
+	display: 'flex',
+	paddingTop: '2rem',
+})

@@ -1,35 +1,27 @@
 import { DefineOnce } from '../../util'
-import { smallText, subtitle, title } from './style.css'
+import { smallText, subtitle, textContent, title } from './style.css'
 
-class ShadeTitle extends HTMLElement {
-	constructor() {
-		super()
-		this.classList.add(title)
-	}
+export const TITLE = createClassedComponent('sh-title', title)
+export const SMALL_TEXT = createClassedComponent('sh-small-text', smallText)
+export const SUBTITLE = createClassedComponent('sh-subtitle', subtitle)
+export const TEXT_CONTENT = createClassedComponent(
+	'sh-text_content',
+	textContent,
+)
+
+function createClassedComponent(name: string, className: string) {
+	DefineOnce.define(
+		name,
+		class extends HTMLElement {
+			constructor() {
+				super()
+			}
+
+			connectedCallback() {
+				this.classList.add(className)
+			}
+		},
+	)
+
+	return name
 }
-export const TITLE = 'sh-title'
-DefineOnce.define(TITLE, ShadeTitle)
-
-class ShadeSmallText extends HTMLElement {
-	constructor() {
-		super()
-	}
-
-	connectedCallback() {
-		this.classList.add(smallText)
-	}
-}
-export const SMALL_TEXT = 'sh-small-text'
-DefineOnce.define(SMALL_TEXT, ShadeSmallText)
-
-class ShadeSubtitle extends HTMLElement {
-	constructor() {
-		super()
-	}
-
-	connectedCallback() {
-		this.classList.add(subtitle)
-	}
-}
-export const SUBTITLE = 'sh-subtitle'
-DefineOnce.define(SUBTITLE, ShadeSubtitle)
