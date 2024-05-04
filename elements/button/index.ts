@@ -8,6 +8,7 @@ import {
 	iconWrapperStyle,
 	secondaryButton,
 } from './style.css'
+import spinnerIcon from '../../icons/animated/spinner.svg?raw'
 
 const TYPE_CLASS_MAP = {
 	accent: accentButton,
@@ -16,9 +17,11 @@ const TYPE_CLASS_MAP = {
 }
 
 class ShadeButton extends HTMLElement {
-	static observedAttributes = ['disabled', 'type']
+	static observedAttributes = ['disabled', 'type', 'loading', 'icon']
 	static defaultType = 'primary'
+
 	private typeClass: string | null = null
+	private iconWrapper = document.createElement('span')
 
 	constructor() {
 		super()
@@ -26,12 +29,32 @@ class ShadeButton extends HTMLElement {
 
 	connectedCallback() {
 		this.classList.add(buttonStyle, token)
-		this.drawIcon()
+		this.initializeIcon()
 
 		this.setInitialAttributes()
 	}
 
+	initializeIcon() {
+		this.drawIcon()
+		this.insertBefore(this.iconWrapper, this.firstChild)
+
+		this.iconWrapper.classList.add(iconWrapperStyle)
+	}
+
 	async drawIcon() {
+		const icon = await this.getIcon()
+		if (!icon) return
+
+		this.iconWrapper.innerHTML = icon
+	}
+
+	async getIcon() {
+		const isLoading = this.getAttribute('loading') !== null
+
+		if (isLoading) {
+			return spinnerIcon
+		}
+
 		const iconSrc = this.getAttribute('icon')
 
 		if (!iconSrc) {
@@ -39,33 +62,50 @@ class ShadeButton extends HTMLElement {
 		}
 
 		const icon = await (await fetch(iconSrc)).text()
-		const iconWrapper = document.createElement('span')
-		iconWrapper.innerHTML = icon
-
-		iconWrapper.classList.add(iconWrapperStyle)
-
-		this.insertBefore(iconWrapper, this.firstChild)
+		return icon
 	}
 
 	setInitialAttributes() {
 		const type = this.getAttribute('type') || ShadeButton.defaultType
+
 		this.setTypeClass(type)
 
 		const disabled = this.getAttribute('disabled') !== null
-		this.setDisability(disabled)
+		const isLoading = this.getAttribute('loading') !== null
+
+		this.setDisability(disabled, isLoading)
 	}
 
 	attributeChangedCallback(name: string, oldValue: string, newValue: string) {
 		if (name === 'disabled') {
-			this.setDisability(newValue !== null)
+			const isLoading = this.getAttribute('loading') !== null
+			this.setDisability(newValue !== null, isLoading)
+
+			return
+		}
+
+		if (name === 'loading') {
+			const disabled = this.getAttribute('disabled') !== null
+			this.setDisability(disabled, newValue !== null)
+			this.drawIcon()
+
+			return
 		}
 
 		if (name === 'type') {
 			this.setTypeClass(newValue)
+
+			return
+		}
+
+		if (name === 'icon') {
+			this.drawIcon()
+
+			return
 		}
 	}
 
-	setTypeClass(type: string) {
+	setTypeClass(type: string | null) {
 		if (!type) return
 
 		if (this.typeClass) {
@@ -79,8 +119,8 @@ class ShadeButton extends HTMLElement {
 		this.typeClass = newTypeClass
 	}
 
-	setDisability(disabled: boolean) {
-		if (disabled) {
+	setDisability(disabled: boolean, isLoading: boolean) {
+		if (disabled || isLoading) {
 			this.classList.add(disabledButton)
 			this.setAttribute('aria-disabled', 'true')
 			this.setAttribute('tabindex', '-1')

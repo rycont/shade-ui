@@ -47,6 +47,11 @@ export const disabledButton = style({
 export const iconWrapperStyle = style({
 	width: '4rem',
 	height: '4rem',
+
+	'& > svg': {
+		width: '100%',
+		height: '100%',
+	},
 	[`.${buttonStyle}:not(.${disabledButton}):hover &`]: {
 		animation: `${shakeMiddle} 1s infinite`,
 	},
