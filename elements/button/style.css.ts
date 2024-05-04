@@ -12,9 +12,7 @@ export const buttonStyle = style({
 	alignItems: 'center',
 	gap: '1rem',
 	...FOCUS_OUTLINE.default,
-	':focus': {
-		...FOCUS_OUTLINE.trigger,
-	},
+	[`&:focus:not([disabled])`]: FOCUS_OUTLINE.trigger,
 })
 
 export const iconWrapperStyle = style({
@@ -45,7 +43,7 @@ export const ghostButton = style({
 
 export const disabledButton = style({
 	vars: {
-		'--button-color-bg': vars.color.L2,
+		'--button-color-bg': vars.color.L3,
 		'--button-color-text': vars.color.L7,
 		'--button-pointer': 'not-allowed',
 	},

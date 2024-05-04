@@ -39,6 +39,9 @@ export const inputStyle = style({
 		width: '20rem',
 		flex: 'revert',
 	},
+	'&::-webkit-calendar-picker-indicator': {
+		display: 'none',
+	},
 })
 
 export const inputTypeWrapperStyle = style({
