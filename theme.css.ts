@@ -60,3 +60,9 @@ export const shakeSmall = keyframes({
 	'50%': { transform: 'rotate(2deg)' },
 	'100%': { transform: 'rotate(-2deg)' },
 })
+
+export const shakeMiddle = keyframes({
+	'0%': { transform: 'rotate(-10deg)' },
+	'50%': { transform: 'rotate(10deg)' },
+	'100%': { transform: 'rotate(-10deg)' },
+})

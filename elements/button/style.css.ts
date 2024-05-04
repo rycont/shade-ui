@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { FOCUS_OUTLINE, THEME_COLOR, vars } from '../../theme.css'
+import { FOCUS_OUTLINE, THEME_COLOR, shakeMiddle, vars } from '../../theme.css'
 
 export const buttonStyle = style({
 	backgroundColor: `var(--button-color-bg, ${vars.color.L9})`,
@@ -12,12 +12,7 @@ export const buttonStyle = style({
 	alignItems: 'center',
 	gap: '1rem',
 	...FOCUS_OUTLINE.default,
-	[`&:focus:not([disabled])`]: FOCUS_OUTLINE.trigger,
-})
-
-export const iconWrapperStyle = style({
-	width: '4rem',
-	height: '4rem',
+	'&:focus:not([disabled])': FOCUS_OUTLINE.trigger,
 })
 
 export const accentButton = style({
@@ -46,5 +41,13 @@ export const disabledButton = style({
 		'--button-color-bg': vars.color.L3,
 		'--button-color-text': vars.color.L7,
 		'--button-pointer': 'not-allowed',
+	},
+})
+
+export const iconWrapperStyle = style({
+	width: '4rem',
+	height: '4rem',
+	[`.${buttonStyle}:not(.${disabledButton}):hover &`]: {
+		animation: `${shakeMiddle} 1s infinite`,
 	},
 })
