@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { shake, shakeSmall, vars } from '../../theme.css'
+import { FOCUS_OUTLINE, shake, shakeSmall, vars } from '../../theme.css'
 
 export const wrapperStyle = style({
 	border: `2px solid ${vars.color.L3}`,
@@ -8,12 +8,10 @@ export const wrapperStyle = style({
 	justifyContent: 'space-between',
 	width: '100%',
 	boxSizing: 'border-box',
-	transition: vars.timing.ease,
 	backgroundColor: vars.color.L1,
 	borderRadius: '3rem',
-	':focus-within': {
-		boxShadow: `0 0 0 2px ${vars.color.L7}`,
-	},
+	...FOCUS_OUTLINE.default,
+	':focus-within': FOCUS_OUTLINE.trigger,
 	'&:has(input[disabled])': {
 		borderWidth: '1px',
 	},

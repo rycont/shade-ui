@@ -2,7 +2,7 @@ import { globalStyle, style } from '@vanilla-extract/css'
 import { vars } from '../../theme.css'
 
 export const container = style({
-	backgroundColor: vars.color.L2,
+	backgroundColor: vars.color.L1,
 	minHeight: '100vh',
 	display: 'flex',
 	flexDirection: 'column',
