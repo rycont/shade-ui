@@ -19,3 +19,8 @@ export const textContent = style({
 	fontSize: '4.5rem',
 	fontWeight: '500',
 })
+
+export const token = style({
+	fontSize: '4rem',
+	fontWeight: '700',
+})

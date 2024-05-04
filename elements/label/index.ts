@@ -95,8 +95,6 @@ class ShadeLabel extends HTMLElement {
 			return this._descriptionElement
 		}
 
-		console.log('Building new desc')
-
 		const descriptionElement = document.createElement(SMALL_TEXT)
 
 		const description = this.getAttribute('description')
