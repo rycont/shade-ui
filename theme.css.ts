@@ -12,17 +12,22 @@ const color = {
 	L2: '#f6f7fa',
 	L1: '#fcfcfd',
 	skyblue: '#8099FF',
+	orange: '#E3714F',
 }
+
+export const THEME_COLOR = `var(--theme-color, ${color.orange})`
 
 export const vars = createGlobalTheme(':root', {
 	color,
 	timing: {
-		ease: '500ms cubic-bezier(0, 0.8, 0, 1)',
+		ease: '300ms cubic-bezier(0, 0.8, 0, 1)',
 	},
 	shadow: {
 		card: '0rem 1rem 6rem rgba(0, 0, 0, 0.06)',
 	},
 })
+
+export const OUTLINE_COLOR = vars.color.L7
 
 export const FOCUS_OUTLINE = {
 	default: {
@@ -30,12 +35,13 @@ export const FOCUS_OUTLINE = {
 		transition: vars.timing.ease,
 	},
 	trigger: {
-		boxShadow: `0 0 0 2px ${color.L7}`,
+		boxShadow: `0 0 0 2px ${OUTLINE_COLOR}`,
 	},
 }
 
 globalStyle(':root', {
 	fontSize: '4px',
+	accentColor: THEME_COLOR,
 })
 
 globalStyle('body', {

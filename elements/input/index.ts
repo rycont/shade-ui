@@ -40,14 +40,6 @@ class ShadeInput extends HTMLElement {
 
 		this.appendChild(inputTypeWrapper)
 
-		const type = this.getAttribute('type')
-
-		if (type && ['datetime-local', 'date'].includes(type)) {
-			this.input.addEventListener('focus', () => {
-				this.input.showPicker()
-			})
-		}
-
 		passAttributes(this.input, this, [
 			'placeholder',
 			'type',

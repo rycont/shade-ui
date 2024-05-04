@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { FOCUS_OUTLINE, vars } from '../../theme.css'
+import { FOCUS_OUTLINE, THEME_COLOR, vars } from '../../theme.css'
 
 export const buttonStyle = style({
 	backgroundColor: `var(--button-color-bg, ${vars.color.L9})`,
@@ -22,7 +22,7 @@ export const iconWrapperStyle = style({
 
 export const accentButton = style({
 	vars: {
-		'--button-color-bg': `var(--theme-color-accent, #E3714F)`,
+		'--button-color-bg': THEME_COLOR,
 		'--button-color-text': vars.color.L1,
 	},
 })

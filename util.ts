@@ -22,3 +22,16 @@ export class DefineOnce {
 		}
 	}
 }
+
+export function defaultProps(
+	element: HTMLElement,
+	attributes: Record<string, string>,
+) {
+	for (const key in attributes) {
+		const value = attributes[key]
+
+		if (!element.hasAttribute(key)) {
+			element.setAttribute(key, value)
+		}
+	}
+}
