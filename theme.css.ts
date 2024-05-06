@@ -47,6 +47,7 @@ globalStyle(':root', {
 globalStyle('body', {
 	margin: 0,
 	fontSize: '4rem',
+	color: vars.color.L9,
 })
 
 export const shake = keyframes({
