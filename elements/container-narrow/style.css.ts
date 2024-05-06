@@ -1,8 +1,11 @@
 import { globalStyle, style } from '@vanilla-extract/css'
 import { vars } from '../../theme.css'
 
+const BACKGROUND_COLOR = `var(--container-background-color, ${vars.color.L1})`
+const BACKDROP_COLOR = `var(--container-backdrop-color, ${vars.color.L2})`
+
 export const container = style({
-	backgroundColor: vars.color.L1,
+	backgroundColor: BACKGROUND_COLOR,
 	minHeight: '100vh',
 	display: 'flex',
 	flexDirection: 'column',
@@ -15,5 +18,5 @@ export const container = style({
 })
 
 globalStyle('body', {
-	backgroundColor: vars.color.L2,
+	backgroundColor: BACKDROP_COLOR,
 })

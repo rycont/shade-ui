@@ -20,5 +20,5 @@ export const cardStyle = style({
 	overflow: 'hidden',
 	padding: '5rem',
 	gap: '4rem',
-	animation: `${appear} ${vars.timing.ease} forwards`,
+	animation: `${appear} 1s forwards`,
 })
