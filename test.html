@@ -15,6 +15,7 @@
 		<script type="module" src="./elements/button/index.ts"></script>
 		<script type="module" src="./elements/checkbox/index.ts"></script>
 		<script type="module" src="./elements/hovert/index.ts"></script>
+		<script type="module" src="./elements/card/index.ts"></script>
 	</head>
 	<body>
 		<sh-container-narrow>
@@ -27,12 +28,14 @@
 			>
 				<sh-input placeholder="홍길동" type="date"></sh-input>
 			</sh-label>
-			<sh-label>
-				<sh-input placeholder="홍길동"></sh-input>
-			</sh-label>
-			<sh-label title="제적 여부">
-				<sh-checkbox></sh-checkbox>
-			</sh-label>
+			<sh-card>
+				<sh-label>
+					<sh-input placeholder="홍길동"></sh-input>
+				</sh-label>
+				<sh-label title="제적 여부">
+					<sh-checkbox></sh-checkbox>
+				</sh-label>
+			</sh-card>
 
 			<sh-horz gap="1"
 				><sh-button
