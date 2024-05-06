@@ -3,7 +3,7 @@ var l = (s, t, e) => t in s ? d(s, t, { enumerable: !0, configurable: !0, writab
 var a = (s, t, e) => (l(s, typeof t != "symbol" ? t + "" : t, e), e);
 import { D as o } from "./util-ve1EjmCE.js";
 import "./theme.css.ts.vanilla-l0sNRNKZ.js";
-var n = "sh-ui-1f7zqr50";
+var n = "sh-ui-1f7zqr51";
 class c extends HTMLElement {
   constructor() {
     super();

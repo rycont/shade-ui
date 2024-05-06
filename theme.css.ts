@@ -20,7 +20,7 @@ export const THEME_COLOR = `var(--theme-color, ${color.orange})`
 export const vars = createGlobalTheme(':root', {
 	color,
 	timing: {
-		ease: '300ms cubic-bezier(0, 0.8, 0, 1)',
+		ease: '500ms cubic-bezier(0, 0.8, 0, 1)',
 	},
 	shadow: {
 		card: '0rem 1rem 6rem rgba(0, 0, 0, 0.06)',

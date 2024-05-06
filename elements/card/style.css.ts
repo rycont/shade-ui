@@ -1,5 +1,14 @@
-import { style } from '@vanilla-extract/css'
+import { keyframes, style } from '@vanilla-extract/css'
 import { vars } from '../../theme.css'
+
+const appear = keyframes({
+	from: {
+		opacity: 0,
+	},
+	to: {
+		opacity: 1,
+	},
+})
 
 export const cardStyle = style({
 	backgroundColor: vars.color.L1,
@@ -11,4 +20,5 @@ export const cardStyle = style({
 	overflow: 'hidden',
 	padding: '5rem',
 	gap: '4rem',
+	animation: `${appear} ${vars.timing.ease} forwards`,
 })
