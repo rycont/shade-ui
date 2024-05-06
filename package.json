@@ -1,6 +1,7 @@
 {
 	"devDependencies": {
 		"@vanilla-extract/vite-plugin": "^4.0.7",
+		"glob": "^10.3.12",
 		"vite": "^5.2.10"
 	},
 	"dependencies": {
@@ -10,5 +11,6 @@
 		"dev": "vite dev",
 		"build": "vite build"
 	},
-	"name": "shade-ui"
+	"name": "shade-ui",
+	"type": "module"
 }
