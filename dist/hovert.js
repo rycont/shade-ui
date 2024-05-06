@@ -1,25 +1,26 @@
-import { D as a } from "./util-BfafNPJz.js";
-var h = "sh-ui-1mtdroy0", r = "sh-ui-1mtdroy1";
-const d = class d extends HTMLElement {
+var r = Object.defineProperty;
+var h = (e, s, i) => s in e ? r(e, s, { enumerable: !0, configurable: !0, writable: !0, value: i }) : e[s] = i;
+var d = (e, s, i) => (h(e, typeof s != "symbol" ? s + "" : s, i), i);
+import { D as l } from "./util-ve1EjmCE.js";
+var c = "sh-ui-1mtdroy0", g = "sh-ui-1mtdroy1";
+class a extends HTMLElement {
   connectedCallback() {
-    this.classList.add(h);
+    this.classList.add(c);
   }
-  attributeChangedCallback(s, p, t) {
+  attributeChangedCallback(s, i, t) {
     s === "gap" ? this.style.gap = t + "rem" : s === "p" ? this.style.padding = t + "rem" : s === "px" ? this.style.paddingInline = t + "rem" : s === "py" && (this.style.paddingBlock = t + "rem");
   }
-};
-d.observedAttributes = ["gap", "p", "px", "py"];
-let e = d;
-a.define("sh-horz", e);
-const l = class l extends HTMLElement {
+}
+d(a, "observedAttributes", ["gap", "p", "px", "py"]);
+l.define("sh-horz", a);
+class p extends HTMLElement {
   connectedCallback() {
-    this.classList.add(r);
+    this.classList.add(g);
   }
-  attributeChangedCallback(s, p, t) {
+  attributeChangedCallback(s, i, t) {
     s === "gap" ? this.style.gap = t + "rem" : s === "p" ? this.style.padding = t + "rem" : s === "px" ? this.style.paddingInline = t + "rem" : s === "py" && (this.style.paddingBlock = t + "rem");
   }
-};
-l.observedAttributes = ["gap", "p", "px", "py"];
-let i = l;
-a.define("sh-vert", i);
+}
+d(p, "observedAttributes", ["gap", "p", "px", "py"]);
+l.define("sh-vert", p);
 //# sourceMappingURL=hovert.js.map

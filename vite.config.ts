@@ -1,5 +1,6 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 import { resolve } from 'path'
 
 import { glob } from 'glob'
@@ -18,6 +19,7 @@ export default defineConfig({
 				return 'sh-ui-' + props.hash
 			},
 		}),
+		dts({ insertTypesEntry: true }),
 	],
 	publicDir: './icons',
 	build: {

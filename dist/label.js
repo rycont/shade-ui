@@ -1,52 +1,59 @@
-import { SUBTITLE as c, SMALL_TEXT as E } from "./typo.js";
-import { D as h } from "./util-BfafNPJz.js";
+var h = Object.defineProperty;
+var p = (n, s, e) => s in n ? h(n, s, { enumerable: !0, configurable: !0, writable: !0, value: e }) : n[s] = e;
+var i = (n, s, e) => (p(n, typeof s != "symbol" ? s + "" : s, e), e);
+import { SUBTITLE as u, SMALL_TEXT as c } from "./typo.js";
+import { D as g } from "./util-ve1EjmCE.js";
 import "./theme.css.ts.vanilla-l0sNRNKZ.js";
-var d = "sh-ui-1t9t5490", p = "sh-ui-1t9t5491", u = "sh-ui-1t9t5492", g = "sh-ui-1t9t5493";
-const m = class m extends HTMLElement {
+var _ = "sh-ui-1t9t5490", b = "sh-ui-1t9t5491", f = "sh-ui-1t9t5492", C = "sh-ui-1t9t5493";
+class d extends HTMLElement {
   constructor() {
-    super(), this._labelElement = null, this._titleElement = null, this._descriptionElement = null, this._messageElement = null;
+    super();
+    i(this, "_labelElement", null);
+    i(this, "_titleElement", null);
+    i(this, "_descriptionElement", null);
+    i(this, "_messageElement", null);
   }
   connectedCallback() {
     this.insertBefore(this.labelElement, this.firstChild), this.messageElement && this.append(this.messageElement);
   }
-  attributeChangedCallback(e, t, s) {
-    var r, n, a, o;
+  attributeChangedCallback(e, t, l) {
+    var a, r, o, E;
     if (e === "title")
-      this.titleElement.textContent = s;
+      this.titleElement.textContent = l;
     else if (e === "description")
-      if (!s)
-        (r = this._descriptionElement) == null || r.remove(), this._descriptionElement = null;
+      if (!l)
+        (a = this._descriptionElement) == null || a.remove(), this._descriptionElement = null;
       else {
-        const i = this.descriptionElement;
-        i.textContent = s, (a = (n = this._labelElement) == null ? void 0 : n.appendChild) == null || a.call(n, i);
+        const m = this.descriptionElement;
+        m.textContent = l, (o = (r = this._labelElement) == null ? void 0 : r.appendChild) == null || o.call(r, m);
       }
     else if (e === "message")
-      if (!s)
-        (o = this._messageElement) == null || o.remove(), this._messageElement = null;
+      if (!l)
+        (E = this._messageElement) == null || E.remove(), this._messageElement = null;
       else {
-        const i = this.messageElement;
-        i.textContent = s, this.append(i);
+        const m = this.messageElement;
+        m.textContent = l, this.append(m);
       }
   }
   get labelElement() {
     if (this._labelElement)
       return this._labelElement;
     const e = document.createElement("label");
-    e.classList.add(p), e.append(this.titleElement);
+    e.classList.add(b), e.append(this.titleElement);
     const t = this.descriptionElement;
     return t && e.append(t), this._labelElement = e, e;
   }
   get titleElement() {
     if (this._titleElement)
       return this._titleElement;
-    const e = document.createElement(c);
-    return e.textContent = this.getAttribute("title") || "NO TITLE", e.classList.add(d), this._titleElement = e, e;
+    const e = document.createElement(u);
+    return e.textContent = this.getAttribute("title") || "NO TITLE", e.classList.add(_), this._titleElement = e, e;
   }
   get descriptionElement() {
     if (this._descriptionElement)
       return this._descriptionElement;
-    const e = document.createElement(E), t = this.getAttribute("description");
-    return t ? (e.textContent = t, e.classList.add(u), this._descriptionElement = e, e) : null;
+    const e = document.createElement(c), t = this.getAttribute("description");
+    return t ? (e.textContent = t, e.classList.add(f), this._descriptionElement = e, e) : null;
   }
   get messageElement() {
     if (this._messageElement)
@@ -54,11 +61,10 @@ const m = class m extends HTMLElement {
     const e = this.getAttribute("message");
     if (!e)
       return null;
-    const t = document.createElement(E);
-    return t.textContent = e, t.classList.add(g), this._messageElement = t, t;
+    const t = document.createElement(c);
+    return t.textContent = e, t.classList.add(C), this._messageElement = t, t;
   }
-};
-m.observedAttributes = ["title", "message", "description"];
-let l = m;
-h.define("sh-label", l);
+}
+i(d, "observedAttributes", ["title", "message", "description"]);
+g.define("sh-label", d);
 //# sourceMappingURL=label.js.map
