@@ -1,17 +1,27 @@
-import { D as e } from "./util-ve1EjmCE.js";
+var d = Object.defineProperty;
+var l = (s, t, e) => t in s ? d(s, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : s[t] = e;
+var a = (s, t, e) => (l(s, typeof t != "symbol" ? t + "" : t, e), e);
+import { D as o } from "./util-ve1EjmCE.js";
 import "./theme.css.ts.vanilla-l0sNRNKZ.js";
-var t = "sh-ui-1f7zqr50";
-class s extends HTMLElement {
+var n = "sh-ui-1f7zqr50";
+class c extends HTMLElement {
   constructor() {
     super();
   }
   connectedCallback() {
-    this.setAttribute("role", "card"), this.classList.add(t);
+    this.setAttribute("role", "card"), this.classList.add(n);
+  }
+  attributeChangedCallback(t, e, r) {
+    if (e === r)
+      return;
+    const i = r === null ? "0rem" : +r + "rem";
+    t === "p" && this.style.setProperty("padding", i), t === "g" && this.style.setProperty("gap", i);
   }
 }
-const r = "sh-card";
-e.define(r, s);
+a(c, "observedAttributes", ["p", "g"]);
+const p = "sh-card";
+o.define(p, c);
 export {
-  r as default
+  p as default
 };
 //# sourceMappingURL=card.js.map
