@@ -2,7 +2,7 @@ var h = Object.defineProperty;
 var p = (n, s, e) => s in n ? h(n, s, { enumerable: !0, configurable: !0, writable: !0, value: e }) : n[s] = e;
 var l = (n, s, e) => (p(n, typeof s != "symbol" ? s + "" : s, e), e);
 import { SUBTITLE as g, SMALL_TEXT as c } from "./typo.js";
-import { D as u } from "./util-ve1EjmCE.js";
+import { D as u } from "./util-D2mgkBnY.js";
 import "./theme.css.ts.vanilla-l0sNRNKZ.js";
 var _ = "sh-1t9t5490", b = "sh-1t9t5491", f = "sh-1t9t5492", C = "sh-1t9t5493";
 class d extends HTMLElement {

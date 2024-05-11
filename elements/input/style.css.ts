@@ -70,7 +70,7 @@ export const inputTypeWrapperStyle = style({
 		padding: '2rem 3rem',
 		zIndex: 1,
 		right: '0rem',
-		boxShadow: vars.shadow.card,
+		boxShadow: vars.shadow.elevated,
 		bottom: '-12rem',
 		opacity: 0,
 		transition: vars.timing.ease,

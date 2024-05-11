@@ -1,7 +1,7 @@
 import { DefineOnce } from '../../util'
 import { container } from './style.css'
 
-class ShadeContainerNarrow extends HTMLElement {
+export class ShadeContainerNarrow extends HTMLElement {
 	constructor() {
 		super()
 	}

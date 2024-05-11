@@ -21,7 +21,7 @@ export declare const vars: {
         ease: `var(--${string})` | `var(--${string}, ${string})` | `var(--${string}, ${number})`;
     };
     shadow: {
-        card: `var(--${string})` | `var(--${string}, ${string})` | `var(--${string}, ${number})`;
+        elevated: `var(--${string})` | `var(--${string}, ${string})` | `var(--${string}, ${number})`;
     };
 };
 export declare const OUTLINE_COLOR: `var(--${string})` | `var(--${string}, ${string})` | `var(--${string}, ${number})`;

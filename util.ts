@@ -13,12 +13,10 @@ export function passAttributes(
 }
 
 export class DefineOnce {
-	private static defined = new Set<string>()
-
 	static define(tagName: string, element: CustomElementConstructor) {
-		if (!this.defined.has(tagName)) {
+		if (!customElements.get(tagName)) {
 			customElements.define(tagName, element)
-			this.defined.add(tagName)
+			console.info(`${tagName} defined`)
 		}
 	}
 }

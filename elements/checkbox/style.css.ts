@@ -52,7 +52,7 @@ export const checkboxStyle = style({
 		zIndex: 1,
 		left: '8rem',
 		top: '-2rem',
-		boxShadow: vars.shadow.card,
+		boxShadow: vars.shadow.elevated,
 		opacity: 0,
 	},
 	'&[disabled]:hover::before': {

@@ -37,32 +37,52 @@ const variants = {
 	...decorateVariants,
 }
 
-export const title = style({
+export const titleStyle = {
 	fontSize: '6rem',
 	fontWeight: '700',
+}
+
+export const smallTextStyle = {
+	fontSize: '4rem',
+	fontWeight: '500',
+}
+
+const subtitleStyle = {
+	fontSize: '4.5rem',
+	fontWeight: '700',
+}
+
+export const textContentStyle = {
+	fontSize: '4.5rem',
+	fontWeight: '500',
+}
+
+export const tokenStyle = {
+	fontSize: '4rem',
+	fontWeight: '700',
+}
+
+export const title = style({
+	...titleStyle,
 	...variants,
 })
 
 export const smallText = style({
-	fontSize: '4rem',
-	fontWeight: '500',
+	...smallTextStyle,
 	...variants,
 })
 
 export const subtitle = style({
-	fontSize: '4.5rem',
-	fontWeight: '700',
+	...subtitleStyle,
 	...variants,
 })
 
 export const textContent = style({
-	fontSize: '4.5rem',
-	fontWeight: '500',
+	...textContentStyle,
 	...variants,
 })
 
 export const token = style({
-	fontSize: '4rem',
-	fontWeight: '700',
+	...tokenStyle,
 	...variants,
 })

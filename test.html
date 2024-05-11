@@ -16,17 +16,14 @@
 		<script type="module" src="./elements/checkbox/index.ts"></script>
 		<script type="module" src="./elements/hovert/index.ts"></script>
 		<script type="module" src="./elements/card/index.ts"></script>
-
-		<style>
-			:root {
-				--container-backdrop-color: #acacac;
-				--container-background-color: #f0f0f0;
-			}
-		</style>
+		<script
+			type="module"
+			src="./elements/floating-button/index.ts"
+		></script>
 	</head>
 	<body>
 		<sh-container-narrow>
-			<sh-title L8 right> 설정 </sh-title>
+			<sh-title> 설정 </sh-title>
 			<sh-label
 				title="대표 색상"
 				description="대표 색상을 입력해주세요 필수입니다"
@@ -35,7 +32,7 @@
 			>
 				<sh-input placeholder="홍길동" type="date"></sh-input>
 			</sh-label>
-			<sh-card p="10" g="0">
+			<sh-card>
 				<sh-label>
 					<sh-input placeholder="홍길동"></sh-input>
 				</sh-label>
@@ -45,26 +42,20 @@
 			</sh-card>
 
 			<sh-horz gap="1"
-				><sh-button
-					data-fillx
-					icon="/icons/Send.svg"
-					type="accent"
-					loading
-				>
+				><sh-button data-fillx icon="/Send.svg" type="accent" loading>
 					제출
 				</sh-button>
-				<sh-button icon="/icons/Send.svg" type="accent" loading>
+				<sh-button icon="/Send.svg" type="accent" loading>
 					제출
 				</sh-button>
 				<sh-vert gap="1">
-					<sh-button icon="/icons/Send.svg" type="accent" loading>
+					<sh-button icon="/Send.svg" type="accent" loading>
 						제출
 					</sh-button>
-					<sh-button icon="/icons/Send.svg" type="accent">
-						제출
-					</sh-button>
+					<sh-button icon="/Send.svg" type="accent"> 제출 </sh-button>
 				</sh-vert>
 			</sh-horz>
+			<sh-floating-button icon="/Send.svg">보내기</sh-floating-button>
 		</sh-container-narrow>
 
 		<script type="module"></script>

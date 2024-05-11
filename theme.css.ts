@@ -27,7 +27,7 @@ export const vars = createGlobalTheme(':root', {
 		ease: '500ms cubic-bezier(0, 0.8, 0, 1)',
 	},
 	shadow: {
-		card: '0rem 1rem 6rem rgba(0, 0, 0, 0.06)',
+		elevated: '0rem 1rem 3rem rgba(0, 0, 0, 0.08)',
 	},
 })
 
