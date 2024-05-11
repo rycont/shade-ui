@@ -16,9 +16,13 @@ const color = {
 }
 
 export const THEME_COLOR = `var(--theme-color, ${color.orange})`
+const BASE_SIZE = `var(--sh-base-size, 4px)`
 
 export const vars = createGlobalTheme(':root', {
 	color,
+	bezier: {
+		ease: 'cubic-bezier(0, 0.8, 0, 1)',
+	},
 	timing: {
 		ease: '500ms cubic-bezier(0, 0.8, 0, 1)',
 	},
@@ -40,7 +44,7 @@ export const FOCUS_OUTLINE = {
 }
 
 globalStyle(':root', {
-	fontSize: '4px',
+	fontSize: BASE_SIZE,
 	accentColor: THEME_COLOR,
 })
 

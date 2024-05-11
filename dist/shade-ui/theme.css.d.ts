@@ -14,6 +14,9 @@ export declare const vars: {
         skyblue: `var(--${string})` | `var(--${string}, ${string})` | `var(--${string}, ${number})`;
         orange: `var(--${string})` | `var(--${string}, ${string})` | `var(--${string}, ${number})`;
     };
+    bezier: {
+        ease: `var(--${string})` | `var(--${string}, ${string})` | `var(--${string}, ${number})`;
+    };
     timing: {
         ease: `var(--${string})` | `var(--${string}, ${string})` | `var(--${string}, ${number})`;
     };

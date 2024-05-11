@@ -16,7 +16,7 @@ export default defineConfig({
 		vanillaExtractPlugin({
 			unstable_mode: 'emitCss',
 			identifiers(props) {
-				return 'sh-ui-' + props.hash
+				return 'sh-' + (props.debugId?.toLowerCase() || props.hash)
 			},
 		}),
 		dts({ insertTypesEntry: true }),

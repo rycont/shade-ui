@@ -1,38 +1,38 @@
 var h = Object.defineProperty;
 var p = (n, s, e) => s in n ? h(n, s, { enumerable: !0, configurable: !0, writable: !0, value: e }) : n[s] = e;
-var i = (n, s, e) => (p(n, typeof s != "symbol" ? s + "" : s, e), e);
-import { SUBTITLE as u, SMALL_TEXT as c } from "./typo.js";
-import { D as g } from "./util-ve1EjmCE.js";
+var l = (n, s, e) => (p(n, typeof s != "symbol" ? s + "" : s, e), e);
+import { SUBTITLE as g, SMALL_TEXT as c } from "./typo.js";
+import { D as u } from "./util-ve1EjmCE.js";
 import "./theme.css.ts.vanilla-l0sNRNKZ.js";
-var _ = "sh-ui-1t9t5490", b = "sh-ui-1t9t5491", f = "sh-ui-1t9t5492", C = "sh-ui-1t9t5493";
+var _ = "sh-1t9t5490", b = "sh-1t9t5491", f = "sh-1t9t5492", C = "sh-1t9t5493";
 class d extends HTMLElement {
   constructor() {
     super();
-    i(this, "_labelElement", null);
-    i(this, "_titleElement", null);
-    i(this, "_descriptionElement", null);
-    i(this, "_messageElement", null);
+    l(this, "_labelElement", null);
+    l(this, "_titleElement", null);
+    l(this, "_descriptionElement", null);
+    l(this, "_messageElement", null);
   }
   connectedCallback() {
     this.insertBefore(this.labelElement, this.firstChild), this.messageElement && this.append(this.messageElement);
   }
-  attributeChangedCallback(e, t, l) {
+  attributeChangedCallback(e, t, i) {
     var a, r, o, E;
     if (e === "title")
-      this.titleElement.textContent = l;
+      this.titleElement.textContent = i;
     else if (e === "description")
-      if (!l)
+      if (!i)
         (a = this._descriptionElement) == null || a.remove(), this._descriptionElement = null;
       else {
         const m = this.descriptionElement;
-        m.textContent = l, (o = (r = this._labelElement) == null ? void 0 : r.appendChild) == null || o.call(r, m);
+        m.textContent = i, (o = (r = this._labelElement) == null ? void 0 : r.appendChild) == null || o.call(r, m);
       }
     else if (e === "message")
-      if (!l)
+      if (!i)
         (E = this._messageElement) == null || E.remove(), this._messageElement = null;
       else {
         const m = this.messageElement;
-        m.textContent = l, this.append(m);
+        m.textContent = i, this.append(m);
       }
   }
   get labelElement() {
@@ -46,7 +46,7 @@ class d extends HTMLElement {
   get titleElement() {
     if (this._titleElement)
       return this._titleElement;
-    const e = document.createElement(u);
+    const e = document.createElement(g);
     return e.textContent = this.getAttribute("title") || "NO TITLE", e.classList.add(_), this._titleElement = e, e;
   }
   get descriptionElement() {
@@ -65,6 +65,6 @@ class d extends HTMLElement {
     return t.textContent = e, t.classList.add(C), this._messageElement = t, t;
   }
 }
-i(d, "observedAttributes", ["title", "message", "description"]);
-g.define("sh-label", d);
+l(d, "observedAttributes", ["title", "message", "description"]);
+u.define("sh-label", d);
 //# sourceMappingURL=label.js.map

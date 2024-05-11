@@ -1,6 +1,6 @@
 import { D as e } from "./util-ve1EjmCE.js";
 import "./theme.css.ts.vanilla-l0sNRNKZ.js";
-var n = "sh-ui-cv4bfu0";
+var n = "sh-cv4bfu0";
 class r extends HTMLElement {
   constructor() {
     super();
