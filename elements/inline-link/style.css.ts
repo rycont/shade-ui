@@ -10,4 +10,9 @@ export const iconWrapperStyle = style({
 	height: '4rem',
 	display: 'inline-block',
 	verticalAlign: 'middle',
+	'& svg': {
+		width: '100%',
+		height: '100%',
+		verticalAlign: 'super',
+	},
 })
