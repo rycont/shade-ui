@@ -30,7 +30,6 @@ class ShadeButton extends HTMLElement {
 	connectedCallback() {
 		this.classList.add(buttonStyle, token)
 		this.initializeIcon()
-
 		this.setInitialAttributes()
 	}
 
