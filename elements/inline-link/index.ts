@@ -56,8 +56,11 @@ export class ShadeInlineLink extends HTMLElement {
 	}
 
 	appendChild<T extends Node>(node: T): T {
-		// console.log(node)
-		if ([this, this.anchorElement, this.iconElement].includes(node)) {
+		if (
+			([this, this.anchorElement, this.iconElement] as Node[]).includes(
+				node,
+			)
+		) {
 			return super.appendChild(node)
 		}
 

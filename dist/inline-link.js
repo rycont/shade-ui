@@ -37,7 +37,9 @@ class s extends HTMLElement {
     l !== r && (e === "text" && (this.anchorElement.textContent = r), e === "href" && (this.anchorElement.href = r || ""));
   }
   appendChild(e) {
-    return [this, this.anchorElement, this.iconElement].includes(e) ? super.appendChild(e) : this.anchorElement.appendChild(e);
+    return [this, this.anchorElement, this.iconElement].includes(
+      e
+    ) ? super.appendChild(e) : this.anchorElement.appendChild(e);
   }
 }
 i(s, "observedAttributes", ["text", "href"]);
