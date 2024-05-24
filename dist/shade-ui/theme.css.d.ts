@@ -37,3 +37,5 @@ export declare const FOCUS_OUTLINE: {
 export declare const shake: string;
 export declare const shakeSmall: string;
 export declare const shakeMiddle: string;
+export declare const popAppear: string;
+export declare const popAppearStyle: string;

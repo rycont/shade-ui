@@ -1,4 +1,9 @@
-import { createGlobalTheme, globalStyle, keyframes } from '@vanilla-extract/css'
+import {
+	createGlobalTheme,
+	globalStyle,
+	keyframes,
+	style,
+} from '@vanilla-extract/css'
 
 const color = {
 	L10: '#202128',
@@ -70,4 +75,19 @@ export const shakeMiddle = keyframes({
 	'0%': { transform: 'rotate(-10deg)' },
 	'50%': { transform: 'rotate(10deg)' },
 	'100%': { transform: 'rotate(-10deg)' },
+})
+
+export const popAppear = keyframes({
+	from: {
+		opacity: 0,
+		transform: 'translateY(2rem)',
+	},
+	to: {
+		opacity: 1,
+		transform: 'translateY(0)',
+	},
+})
+
+export const popAppearStyle = style({
+	animation: `${popAppear} ${vars.bezier.ease} 3s forwards`,
 })

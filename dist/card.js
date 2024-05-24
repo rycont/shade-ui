@@ -1,27 +1,27 @@
-var d = Object.defineProperty;
-var l = (s, t, e) => t in s ? d(s, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : s[t] = e;
-var i = (s, t, e) => (l(s, typeof t != "symbol" ? t + "" : t, e), e);
-import { D as o } from "./util-D2mgkBnY.js";
+var l = Object.defineProperty;
+var o = (r, t, e) => t in r ? l(r, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : r[t] = e;
+var i = (r, t, e) => (o(r, typeof t != "symbol" ? t + "" : t, e), e);
 import "./theme.css.ts.vanilla-l0sNRNKZ.js";
-var n = "sh-1f7zqr51";
+import { D as p } from "./util-D2mgkBnY.js";
+var d = "sh-1cu9ibjj", n = "sh-1f7zqr50";
 class c extends HTMLElement {
   constructor() {
     super();
   }
   connectedCallback() {
-    this.setAttribute("role", "card"), this.classList.add(n);
+    this.setAttribute("role", "card"), this.classList.add(n, d);
   }
-  attributeChangedCallback(t, e, r) {
-    if (e === r)
+  attributeChangedCallback(t, e, s) {
+    if (e === s)
       return;
-    const a = r === null ? "0rem" : +r + "rem";
+    const a = s === null ? "0rem" : +s + "rem";
     t === "p" && this.style.setProperty("padding", a), t === "g" && this.style.setProperty("gap", a);
   }
 }
 i(c, "observedAttributes", ["p", "g"]);
-const p = "sh-card";
-o.define(p, c);
+const f = "sh-card";
+p.define(f, c);
 export {
-  p as default
+  f as default
 };
 //# sourceMappingURL=card.js.map
