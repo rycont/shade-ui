@@ -21,7 +21,7 @@ export default defineConfig({
 		}),
 		dts({ insertTypesEntry: true }),
 	],
-	publicDir: './icons',
+	appType: 'mpa',
 	build: {
 		lib: {
 			entry: elementEntries,
