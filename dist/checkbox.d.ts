@@ -1,1 +1,1 @@
-export * from './shade-ui/elements/checkbox/index'
+export * from './elements/checkbox/index'

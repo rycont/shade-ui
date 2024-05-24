@@ -1,1 +1,1 @@
-export * from './shade-ui/elements/chip/index'
+export * from './elements/chip/index'

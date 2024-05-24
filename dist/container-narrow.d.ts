@@ -1,1 +1,1 @@
-export * from './shade-ui/elements/container-narrow/index'
+export * from './elements/container-narrow/index'

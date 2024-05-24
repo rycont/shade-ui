@@ -1,1 +1,1 @@
-export * from './shade-ui/elements/typo/index'
+export * from './elements/typo/index'

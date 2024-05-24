@@ -1,1 +1,1 @@
-export * from './shade-ui/elements/hovert/index'
+export * from './elements/hovert/index'

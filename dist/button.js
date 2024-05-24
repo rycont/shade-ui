@@ -1,25 +1,20 @@
-var d = Object.defineProperty;
-var h = (n, s, t) => s in n ? d(n, s, { enumerable: !0, configurable: !0, writable: !0, value: t }) : n[s] = t;
-var a = (n, s, t) => (h(n, typeof s != "symbol" ? s + "" : s, t), t);
-import { D as u } from "./util-D2mgkBnY.js";
-import { c as p } from "./style.css-Bma0hoQJ.js";
+import { D as l } from "./util-D2mgkBnY.js";
+import { c as o } from "./style.css-Bma0hoQJ.js";
 import "./theme.css.ts.vanilla-l0sNRNKZ.js";
-var b = "sh-ldku260", g = "sh-ldku261", y = "sh-ldku262", f = "sh-ldku263", c = "sh-ldku264", A = "sh-ldku265";
-const C = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_aj0A{transform-origin:center;animation:spinner_KYSC .75s infinite linear}@keyframes spinner_KYSC{100%{transform:rotate(360deg)}}</style><path d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z" class="spinner_aj0A" fill="currentColor"/></svg>', m = {
-  accent: g,
-  secondary: y,
-  ghost: f
-}, r = class r extends HTMLElement {
+var c = "sh-ldku260", d = "sh-ldku261", h = "sh-ldku262", u = "sh-ldku263", r = "sh-ldku264", p = "sh-ldku265";
+const b = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_aj0A{transform-origin:center;animation:spinner_KYSC .75s infinite linear}@keyframes spinner_KYSC{100%{transform:rotate(360deg)}}</style><path d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z" class="spinner_aj0A" fill="currentColor"/></svg>', g = {
+  accent: d,
+  secondary: h,
+  ghost: u
+}, e = class e extends HTMLElement {
   constructor() {
-    super();
-    a(this, "typeClass", null);
-    a(this, "iconWrapper", document.createElement("span"));
+    super(), this.typeClass = null, this.iconWrapper = document.createElement("span");
   }
   connectedCallback() {
-    this.classList.add(b, p), this.initializeIcon(), this.setInitialAttributes();
+    this.classList.add(c, o), this.initializeIcon(), this.setInitialAttributes();
   }
   initializeIcon() {
-    this.drawIcon(), this.insertBefore(this.iconWrapper, this.firstChild), this.iconWrapper.classList.add(A);
+    this.drawIcon(), this.insertBefore(this.iconWrapper, this.firstChild), this.iconWrapper.classList.add(p);
   }
   async drawIcon() {
     const t = await this.getIcon();
@@ -27,29 +22,29 @@ const C = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.
   }
   async getIcon() {
     if (this.getAttribute("loading") !== null)
-      return C;
+      return b;
     const i = this.getAttribute("icon");
     return i ? await (await fetch(i)).text() : void 0;
   }
   setInitialAttributes() {
-    const t = this.getAttribute("type") || r.defaultType;
+    const t = this.getAttribute("type") || e.defaultType;
     this.setTypeClass(t);
-    const i = this.getAttribute("disabled") !== null, e = this.getAttribute("loading") !== null;
-    this.setDisability(i, e);
+    const i = this.getAttribute("disabled") !== null, s = this.getAttribute("loading") !== null;
+    this.setDisability(i, s);
   }
-  attributeChangedCallback(t, i, e) {
+  attributeChangedCallback(t, i, s) {
     if (t === "disabled") {
-      const l = this.getAttribute("loading") !== null;
-      this.setDisability(e !== null, l);
+      const n = this.getAttribute("loading") !== null;
+      this.setDisability(s !== null, n);
       return;
     }
     if (t === "loading") {
-      const l = this.getAttribute("disabled") !== null;
-      this.setDisability(l, e !== null), this.drawIcon();
+      const n = this.getAttribute("disabled") !== null;
+      this.setDisability(n, s !== null), this.drawIcon();
       return;
     }
     if (t === "type") {
-      this.setTypeClass(e);
+      this.setTypeClass(s);
       return;
     }
     if (t === "icon") {
@@ -61,14 +56,14 @@ const C = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.
     if (!t)
       return;
     this.typeClass && this.classList.remove(this.typeClass);
-    const i = m[t];
+    const i = g[t];
     i && (this.classList.add(i), this.typeClass = i);
   }
   setDisability(t, i) {
-    t || i ? (this.classList.add(c), this.setAttribute("aria-disabled", "true"), this.setAttribute("tabindex", "-1")) : (this.classList.remove(c), this.removeAttribute("aria-disabled"), this.setAttribute("tabindex", "0"));
+    t || i ? (this.classList.add(r), this.setAttribute("aria-disabled", "true"), this.setAttribute("tabindex", "-1")) : (this.classList.remove(r), this.removeAttribute("aria-disabled"), this.setAttribute("tabindex", "0"));
   }
 };
-a(r, "observedAttributes", ["disabled", "type", "loading", "icon"]), a(r, "defaultType", "primary");
-let o = r;
-u.define("sh-button", o);
+e.observedAttributes = ["disabled", "type", "loading", "icon"], e.defaultType = "primary";
+let a = e;
+l.define("sh-button", a);
 //# sourceMappingURL=button.js.map

@@ -1,1 +1,1 @@
-export * from './shade-ui/elements/label/index'
+export * from './elements/label/index'

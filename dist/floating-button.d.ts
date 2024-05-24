@@ -1,1 +1,1 @@
-export * from './shade-ui/elements/floating-button/index'
+export * from './elements/floating-button/index'

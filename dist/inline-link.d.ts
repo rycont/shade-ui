@@ -1,3 +1,3 @@
-export * from './shade-ui/elements/inline-link/index'
-import ShadeUi from './shade-ui/elements/inline-link/index'
+export * from './elements/inline-link/index'
+import ShadeUi from './elements/inline-link/index'
 export default ShadeUi

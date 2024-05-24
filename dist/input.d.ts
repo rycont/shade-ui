@@ -1,1 +1,1 @@
-export * from './shade-ui/elements/input/index'
+export * from './elements/input/index'

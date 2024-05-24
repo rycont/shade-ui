@@ -1,1 +1,1 @@
-export * from './shade-ui/elements/button/index'
+export * from './elements/button/index'

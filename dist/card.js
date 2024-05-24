@@ -1,27 +1,25 @@
-var l = Object.defineProperty;
-var o = (r, t, e) => t in r ? l(r, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : r[t] = e;
-var i = (r, t, e) => (o(r, typeof t != "symbol" ? t + "" : t, e), e);
 import "./theme.css.ts.vanilla-l0sNRNKZ.js";
-import { D as p } from "./util-D2mgkBnY.js";
-var d = "sh-1cu9ibjj", n = "sh-1f7zqr50";
-class c extends HTMLElement {
+import { D as a } from "./util-D2mgkBnY.js";
+var l = "sh-1cu9ibjj", o = "sh-1f7zqr50";
+const s = class s extends HTMLElement {
   constructor() {
     super();
   }
   connectedCallback() {
-    this.setAttribute("role", "card"), this.classList.add(n, d);
+    this.setAttribute("role", "card"), this.classList.add(o, l);
   }
-  attributeChangedCallback(t, e, s) {
-    if (e === s)
+  attributeChangedCallback(r, c, t) {
+    if (c === t)
       return;
-    const a = s === null ? "0rem" : +s + "rem";
-    t === "p" && this.style.setProperty("padding", a), t === "g" && this.style.setProperty("gap", a);
+    const i = t === null ? "0rem" : +t + "rem";
+    r === "p" && this.style.setProperty("padding", i), r === "g" && this.style.setProperty("gap", i);
   }
-}
-i(c, "observedAttributes", ["p", "g"]);
-const f = "sh-card";
-p.define(f, c);
+};
+s.observedAttributes = ["p", "g"];
+let e = s;
+const p = "sh-card";
+a.define(p, e);
 export {
-  f as default
+  p as default
 };
 //# sourceMappingURL=card.js.map
