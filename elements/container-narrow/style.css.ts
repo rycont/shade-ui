@@ -1,8 +1,8 @@
 import { globalStyle, style } from '@vanilla-extract/css'
 import { vars } from '../../theme.css'
 
-const BACKGROUND_COLOR = `var(--container-background-color, ${vars.color.L1})`
-const BACKDROP_COLOR = `var(--container-backdrop-color, ${vars.color.L2})`
+const BACKGROUND_COLOR = `var(--sh-container-background-color, ${vars.color.L1})`
+const BACKDROP_COLOR = `var(--sh-container-backdrop-color, ${vars.color.L2})`
 
 export const NARROW_CONTAINER_WIDTH = '--sh-narrow-container-width'
 
