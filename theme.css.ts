@@ -89,5 +89,21 @@ export const popAppear = keyframes({
 })
 
 export const popAppearStyle = style({
+	opacity: 0,
 	animation: `${popAppear} ${vars.bezier.ease} 3s forwards`,
+	'&+&': {
+		animationDelay: '0.15s',
+	},
+	'&+&+&': {
+		animationDelay: '0.3s',
+	},
+	'&+&+&+&': {
+		animationDelay: '0.45s',
+	},
+	'&+&+&+&+&': {
+		animationDelay: '0.6s',
+	},
+	'&+&+&+&+&+&': {
+		animationDelay: '0.75s',
+	},
 })

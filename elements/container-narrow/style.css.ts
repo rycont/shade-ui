@@ -11,7 +11,7 @@ export const container = style({
 	minHeight: '100vh',
 	display: 'flex',
 	flexDirection: 'column',
-	gap: '4rem',
+	gap: '6rem',
 	maxWidth: `var(${NARROW_CONTAINER_WIDTH})`,
 	margin: '0px auto',
 	padding: '6rem',
