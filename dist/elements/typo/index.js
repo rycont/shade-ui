@@ -1,5 +1,5 @@
-import { D as n } from "./util-D2mgkBnY.js";
-import { t as o, s as c, a, b as l, c as T } from "./style.css-Bma0hoQJ.js";
+import { D as n } from "../../util-D2mgkBnY.js";
+import { t as o, s as c, a, b as l, c as T } from "../../style.css-Bma0hoQJ.js";
 const m = t("sh-title", o), E = t("sh-small-text", c), d = t("sh-subtitle", a), h = t("sh-text", l), u = t("sh-token", T);
 function t(s, e) {
   return n.define(
@@ -21,4 +21,4 @@ export {
   m as TITLE,
   u as TOKEN
 };
-//# sourceMappingURL=typo.js.map
+//# sourceMappingURL=index.js.map

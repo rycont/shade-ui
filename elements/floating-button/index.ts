@@ -78,4 +78,16 @@ export class ShadeFloatingButton extends HTMLElement {
 	}
 }
 
-DefineOnce.define('sh-floating-button', ShadeFloatingButton)
+const name = 'sh-floating-button'
+DefineOnce.define(name, ShadeFloatingButton)
+
+export default name
+
+export interface ShadeFloatingButtonProps {
+	icon?: string
+	'icon-width'?: string
+	'icon-height'?: string
+	'text-color'?: string
+	'background-color'?: string
+	children?: any
+}

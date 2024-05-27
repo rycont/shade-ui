@@ -1,4 +1,4 @@
-import { DefineOnce, defaultProps, passAttributes } from '../../util'
+import { DefineOnce, passAttributes } from '../../util'
 import { checkboxStyle } from './style.css'
 
 class ShadeCheckbox extends HTMLElement {
@@ -27,3 +27,12 @@ class ShadeCheckbox extends HTMLElement {
 }
 
 DefineOnce.define('sh-checkbox', ShadeCheckbox)
+
+const name = 'sh-checkbox'
+export default name
+
+export interface ShadeCheckboxProps {
+	checked?: boolean
+	disabled?: boolean
+	children?: any
+}

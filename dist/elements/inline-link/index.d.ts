@@ -9,3 +9,21 @@ export declare class ShadeInlineLink extends HTMLElement {
 }
 declare const INLINE_LINK = "sh-inline-link";
 export default INLINE_LINK;
+export interface ShadeInlineLinkProps {
+    text: string;
+    href: string;
+    target?: string;
+    rel?: string;
+    download?: string;
+    hreflang?: string;
+    type?: string;
+    referrerpolicy?: string;
+    as?: string;
+    crossorigin?: string;
+    integrity?: string;
+    media?: string;
+    nonce?: string;
+    sizes?: string;
+    title?: string;
+    children?: any;
+}

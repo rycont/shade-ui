@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { globalStyle, style } from '@vanilla-extract/css'
 import { OUTLINE_COLOR, THEME_COLOR, vars } from '../../theme.css'
 
 export const checkboxStyle = style({
@@ -30,13 +30,6 @@ export const checkboxStyle = style({
 	},
 	':checked': {
 		borderColor: THEME_COLOR,
-		'&::after': {
-			transform: 'scale(1)',
-			opacity: 1,
-		},
-	},
-	'&[disabled]': {
-		filter: 'grayscale(100%)',
 	},
 	'::before': {
 		transition: vars.timing.ease,
@@ -55,8 +48,18 @@ export const checkboxStyle = style({
 		boxShadow: vars.shadow.elevated,
 		opacity: 0,
 	},
-	'&[disabled]:hover::before': {
-		left: '9rem',
-		opacity: 1,
+	selectors: {
+		'&[disabled]': {
+			filter: 'grayscale(100%)',
+		},
+		'&[disabled]:hover::before': {
+			left: '9rem',
+			opacity: 1,
+		},
 	},
+})
+
+globalStyle(`.${checkboxStyle}:checked::after`, {
+	transform: 'scale(1)',
+	opacity: 1,
 })

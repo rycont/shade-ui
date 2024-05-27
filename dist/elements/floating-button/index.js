@@ -1,6 +1,6 @@
-import { D as e } from "./util-D2mgkBnY.js";
-import "./theme.css.ts.vanilla-l0sNRNKZ.js";
-import "./style.css.ts.vanilla-l0sNRNKZ.js";
+import { D as i } from "../../util-D2mgkBnY.js";
+import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
+import "../../style.css.ts.vanilla-l0sNRNKZ.js";
 var r = "sh-1y8b0hx0", s = "sh-1y8b0hx1";
 class n extends HTMLElement {
   constructor() {
@@ -20,10 +20,10 @@ class n extends HTMLElement {
     const t = this.iconWrapper;
     if (!t)
       return;
-    const i = this.getAttribute("icon-width"), o = this.getAttribute("icon-height");
-    i && t.style.setProperty(
+    const e = this.getAttribute("icon-width"), o = this.getAttribute("icon-height");
+    e && t.style.setProperty(
       "--sh-floating-button-icon-width",
-      i
+      e
     ), o && t.style.setProperty(
       "--sh-floating-button-icon-height",
       o
@@ -41,8 +41,10 @@ class n extends HTMLElement {
     );
   }
 }
-e.define("sh-floating-button", n);
+const c = "sh-floating-button";
+i.define(c, n);
 export {
-  n as ShadeFloatingButton
+  n as ShadeFloatingButton,
+  c as default
 };
-//# sourceMappingURL=floating-button.js.map
+//# sourceMappingURL=index.js.map

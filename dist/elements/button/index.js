@@ -1,6 +1,6 @@
-import { D as l } from "./util-D2mgkBnY.js";
-import { c as o } from "./style.css-Bma0hoQJ.js";
-import "./theme.css.ts.vanilla-l0sNRNKZ.js";
+import { D as l } from "../../util-D2mgkBnY.js";
+import { c as o } from "../../style.css-Bma0hoQJ.js";
+import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
 var c = "sh-ldku260", d = "sh-ldku261", h = "sh-ldku262", u = "sh-ldku263", r = "sh-ldku264", p = "sh-ldku265";
 const b = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_aj0A{transform-origin:center;animation:spinner_KYSC .75s infinite linear}@keyframes spinner_KYSC{100%{transform:rotate(360deg)}}</style><path d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z" class="spinner_aj0A" fill="currentColor"/></svg>', g = {
   accent: d,
@@ -65,5 +65,9 @@ const b = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.
 };
 e.observedAttributes = ["disabled", "type", "loading", "icon"], e.defaultType = "primary";
 let a = e;
+const C = "sh-button";
 l.define("sh-button", a);
-//# sourceMappingURL=button.js.map
+export {
+  C as default
+};
+//# sourceMappingURL=index.js.map

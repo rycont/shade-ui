@@ -1,5 +1,5 @@
-import { popAppear, popAppearStyle } from '../../theme.css'
-import { DefineOnce } from '../../util'
+import { popAppearStyle } from '../../theme.css'
+import { DefineOnce, ElementChildren } from '../../util'
 import { cardStyle } from './style.css'
 
 class ShadeCard extends HTMLElement {
@@ -32,6 +32,12 @@ class ShadeCard extends HTMLElement {
 	}
 }
 
-const NAME = 'sh-card'
+const NAME = 'sh-card' as const
 DefineOnce.define(NAME, ShadeCard)
 export default NAME
+
+export interface ShadeCardProps {
+	p?: number
+	g?: number
+	children?: any
+}

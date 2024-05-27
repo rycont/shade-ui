@@ -1,6 +1,6 @@
-import { D as r, p as d } from "./util-D2mgkBnY.js";
-import { s as a } from "./style.css-Bma0hoQJ.js";
-import "./theme.css.ts.vanilla-l0sNRNKZ.js";
+import { D as r, p as a } from "../../util-D2mgkBnY.js";
+import { s as d } from "../../style.css-Bma0hoQJ.js";
+import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
 const p = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.66671 3.99996V14H7.33337V3.99996H3.33337V2.66663H12.6667V3.99996H8.66671Z" fill="currentColor"/>
 </svg>
@@ -37,7 +37,7 @@ class v extends HTMLElement {
   connectedCallback() {
     this.classList.add(w);
     const t = this.buildIcon();
-    this.appendChild(t), d(this.input, this, [
+    this.appendChild(t), a(this.input, this, [
       "placeholder",
       "type",
       "value",
@@ -55,7 +55,7 @@ class v extends HTMLElement {
   }
   buildInput() {
     const t = document.createElement("input");
-    return t.classList.add(u, a), this.appendChild(t), t;
+    return t.classList.add(u, d), this.appendChild(t), t;
   }
   buildIcon() {
     const t = document.createElement("span"), l = this.getIconType(), i = o[l] || o[s];
@@ -67,5 +67,9 @@ class v extends HTMLElement {
     return this.getAttribute("disabled") !== null ? "disabled" : this.getAttribute("type") || s;
   }
 }
-r.define("sh-input", v);
-//# sourceMappingURL=input.js.map
+const m = "sh-input";
+r.define(m, v);
+export {
+  m as default
+};
+//# sourceMappingURL=index.js.map

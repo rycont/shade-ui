@@ -1,13 +1,13 @@
-import { p as i, D as n } from "./util-D2mgkBnY.js";
-import "./theme.css.ts.vanilla-l0sNRNKZ.js";
-var c = "sh-1iu60wv0";
+import { p as i, D as c } from "../../util-D2mgkBnY.js";
+import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
+var n = "sh-1iu60wv0";
 const s = class s extends HTMLElement {
   constructor() {
     super(), this.inputElement = this.buildInput();
   }
   buildInput() {
     const t = document.createElement("input");
-    return t.setAttribute("type", "checkbox"), t.classList.add(c), t;
+    return t.setAttribute("type", "checkbox"), t.classList.add(n), t;
   }
   connectedCallback() {
     this.appendChild(this.inputElement), this.setAttribute("role", "checkbox"), i(this.inputElement, this, ["checked", "disabled"]);
@@ -15,5 +15,9 @@ const s = class s extends HTMLElement {
 };
 s.observedAttributes = ["checked", "disabled"];
 let e = s;
-n.define("sh-checkbox", e);
-//# sourceMappingURL=checkbox.js.map
+c.define("sh-checkbox", e);
+const r = "sh-checkbox";
+export {
+  r as default
+};
+//# sourceMappingURL=index.js.map

@@ -1,5 +1,5 @@
-import "./theme.css.ts.vanilla-l0sNRNKZ.js";
-import { D as a } from "./util-D2mgkBnY.js";
+import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
+import { D as a } from "../../util-D2mgkBnY.js";
 var l = "sh-1cu9ibjj", o = "sh-1f7zqr50";
 const s = class s extends HTMLElement {
   constructor() {
@@ -22,4 +22,4 @@ a.define(p, e);
 export {
   p as default
 };
-//# sourceMappingURL=card.js.map
+//# sourceMappingURL=index.js.map

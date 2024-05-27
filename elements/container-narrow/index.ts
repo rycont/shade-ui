@@ -11,4 +11,11 @@ export class ShadeContainerNarrow extends HTMLElement {
 	}
 }
 
-DefineOnce.define('sh-container-narrow', ShadeContainerNarrow)
+const name = 'sh-container-narrow'
+DefineOnce.define(name, ShadeContainerNarrow)
+
+export default name
+
+export interface ShadeContainerNarrowProps {
+	children?: any
+}

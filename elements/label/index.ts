@@ -29,7 +29,11 @@ class ShadeLabel extends HTMLElement {
 		}
 	}
 
-	attributeChangedCallback(name, oldValue, newValue) {
+	attributeChangedCallback(
+		name: string,
+		_oldValue: string | null,
+		newValue: string | null,
+	) {
 		if (name === 'title') {
 			this.titleElement.textContent = newValue
 		} else if (name === 'description') {
@@ -132,4 +136,13 @@ class ShadeLabel extends HTMLElement {
 	}
 }
 
-DefineOnce.define('sh-label', ShadeLabel)
+const name = 'sh-label'
+DefineOnce.define(name, ShadeLabel)
+
+export default name
+export interface ShadeLabelProps {
+	title: string
+	message?: string
+	description?: string
+	children?: any
+}

@@ -12,8 +12,10 @@ export const wrapperStyle = style({
 	borderRadius: '3rem',
 	...FOCUS_OUTLINE.default,
 	':focus-within': FOCUS_OUTLINE.trigger,
-	'&:has(input[disabled])': {
-		borderWidth: '1px',
+	selectors: {
+		'&:has(input[disabled])': {
+			borderWidth: '1px',
+		},
 	},
 })
 
@@ -28,19 +30,21 @@ export const inputStyle = style({
 		color: vars.color.L7,
 		transition: vars.timing.ease,
 	},
-	':disabled::placeholder': {
-		color: vars.color.L6,
-	},
-	[`.${wrapperStyle}:hover > &:disabled::placeholder`]: {
-		color: vars.color.L5,
-	},
-	'&[type=color]': {
-		height: '11rem',
-		width: '20rem',
-		flex: 'revert',
-	},
-	'&::-webkit-calendar-picker-indicator': {
-		display: 'none',
+	selectors: {
+		'&:disabled::placeholder': {
+			color: vars.color.L6,
+		},
+		'&[type=color]': {
+			height: '11rem',
+			width: '20rem',
+			flex: 'revert',
+		},
+		'&::-webkit-calendar-picker-indicator': {
+			display: 'none',
+		},
+		[`.${wrapperStyle}:hover > &:disabled::placeholder`]: {
+			color: vars.color.L5,
+		},
 	},
 })
 

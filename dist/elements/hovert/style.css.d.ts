@@ -1,2 +1,2 @@
-export declare const horz: string;
-export declare const vert: string;
+export declare const horzStyle: string;
+export declare const vertStyle: string;

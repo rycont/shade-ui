@@ -16,7 +16,7 @@ import {
 
 const DEFAULT_INPUT_TYPE = 'text'
 
-const ICONS_BY_TYPE = {
+const ICONS_BY_TYPE: Record<string, string> = {
 	text: TextIcon,
 	password: PasswordIcon,
 	date: CaneldarIcon,
@@ -92,4 +92,24 @@ class ShadeInput extends HTMLElement {
 	}
 }
 
-DefineOnce.define('sh-input', ShadeInput)
+const name = 'sh-input'
+DefineOnce.define(name, ShadeInput)
+
+export default name
+export interface ShadeInputProps {
+	placeholder?: string
+	type?: string
+	value?: string
+	autofocus?: boolean
+	disabled?: boolean
+	max?: string
+	min?: string
+	list?: string
+	readonly?: boolean
+	step?: string
+	pattern?: string
+	inputmode?: string
+	name?: string
+	icon?: string
+	children?: any
+}

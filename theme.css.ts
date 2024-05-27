@@ -4,27 +4,13 @@ import {
 	keyframes,
 	style,
 } from '@vanilla-extract/css'
+import { COLORS } from './colors'
 
-const color = {
-	L10: '#202128',
-	L9: '#3d3f4a',
-	L8: '#555869',
-	L7: '#73768a',
-	L6: '#8d90a0',
-	L5: '#adb0c2',
-	L4: '#d8dae5',
-	L3: '#ebecf5',
-	L2: '#f6f7fa',
-	L1: '#fcfcfd',
-	skyblue: '#8099FF',
-	orange: '#E3714F',
-}
-
-export const THEME_COLOR = `var(--theme-color, ${color.orange})`
+export const THEME_COLOR = `var(--theme-color, ${COLORS.orange})`
 const BASE_SIZE = `var(--sh-base-size, 4px)`
 
 export const vars = createGlobalTheme(':root', {
-	color,
+	color: COLORS,
 	bezier: {
 		ease: 'cubic-bezier(0, 0.8, 0, 1)',
 	},
@@ -91,19 +77,21 @@ export const popAppear = keyframes({
 export const popAppearStyle = style({
 	opacity: 0,
 	animation: `${popAppear} ${vars.bezier.ease} 3s forwards`,
-	'&+&': {
-		animationDelay: '0.15s',
-	},
-	'&+&+&': {
-		animationDelay: '0.3s',
-	},
-	'&+&+&+&': {
-		animationDelay: '0.45s',
-	},
-	'&+&+&+&+&': {
-		animationDelay: '0.6s',
-	},
-	'&+&+&+&+&+&': {
-		animationDelay: '0.75s',
+	selectors: {
+		'&+&': {
+			animationDelay: '0.15s',
+		},
+		'&+&+&': {
+			animationDelay: '0.3s',
+		},
+		'&+&+&+&': {
+			animationDelay: '0.45s',
+		},
+		'&+&+&+&+&': {
+			animationDelay: '0.6s',
+		},
+		'&+&+&+&+&+&': {
+			animationDelay: '0.75s',
+		},
 	},
 })

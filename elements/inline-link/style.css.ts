@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { globalStyle, style } from '@vanilla-extract/css'
 
 export const linkStyle = style({
 	color: 'inherit',
@@ -10,9 +10,10 @@ export const iconWrapperStyle = style({
 	height: '4rem',
 	display: 'inline-block',
 	verticalAlign: 'middle',
-	'& svg': {
-		width: '100%',
-		height: '100%',
-		verticalAlign: 'super',
-	},
+})
+
+globalStyle(`.${iconWrapperStyle} svg`, {
+	width: '100%',
+	height: '100%',
+	verticalAlign: 'super',
 })

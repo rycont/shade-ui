@@ -8,4 +8,10 @@ export class ShadeChip extends HTMLElement {
 	}
 }
 
-DefineOnce.define('sh-chip', ShadeChip)
+const name = 'sh-chip'
+export default name
+DefineOnce.define(name, ShadeChip)
+
+export interface ShadeChipProps {
+	children?: any
+}

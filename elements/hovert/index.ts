@@ -1,11 +1,11 @@
 import { DefineOnce } from '../../util'
-import { horz, vert } from './style.css'
+import { horzStyle, vertStyle } from './style.css'
 
-class Horz extends HTMLElement {
+class ShadeHorz extends HTMLElement {
 	static observedAttributes = ['gap', 'p', 'px', 'py']
 
 	connectedCallback() {
-		this.classList.add(horz)
+		this.classList.add(horzStyle)
 	}
 
 	attributeChangedCallback(name: string, oldValue: string, newValue: string) {
@@ -21,13 +21,14 @@ class Horz extends HTMLElement {
 	}
 }
 
-DefineOnce.define('sh-horz', Horz)
+export const horz = 'sh-horz'
+DefineOnce.define(horz, ShadeHorz)
 
-class Vert extends HTMLElement {
+class ShadeVert extends HTMLElement {
 	static observedAttributes = ['gap', 'p', 'px', 'py']
 
 	connectedCallback() {
-		this.classList.add(vert)
+		this.classList.add(vertStyle)
 	}
 
 	attributeChangedCallback(name: string, oldValue: string, newValue: string) {
@@ -43,4 +44,13 @@ class Vert extends HTMLElement {
 	}
 }
 
-DefineOnce.define('sh-vert', Vert)
+export const vert = 'sh-vert'
+DefineOnce.define(vert, ShadeVert)
+
+export interface ShadeHovertProps {
+	gap?: string | number
+	p?: string | number
+	px?: string | number
+	py?: string | number
+	children?: any
+}

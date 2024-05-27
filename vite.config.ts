@@ -8,7 +8,7 @@ import { glob } from 'glob'
 const elements = await glob('./elements/*/index.ts')
 
 const elementEntries = Object.fromEntries(
-	elements.map((path) => [path.slice(9, -9), resolve(path)]),
+	elements.map((path) => [path.slice(0, -3), resolve(path)]),
 )
 
 export default defineConfig({
@@ -19,7 +19,7 @@ export default defineConfig({
 				return 'sh-' + (props.debugId?.toLowerCase() || props.hash)
 			},
 		}),
-		dts({ insertTypesEntry: true }),
+		dts(),
 	],
 	appType: 'mpa',
 	build: {

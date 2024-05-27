@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { globalStyle, style } from '@vanilla-extract/css'
 import { FOCUS_OUTLINE, THEME_COLOR, shakeMiddle, vars } from '../../theme.css'
 
 export const buttonStyle = style({
@@ -12,7 +12,9 @@ export const buttonStyle = style({
 	alignItems: 'center',
 	gap: '1rem',
 	...FOCUS_OUTLINE.default,
-	'&:focus:not([disabled])': FOCUS_OUTLINE.trigger,
+	selectors: {
+		'&:focus:not([disabled])': FOCUS_OUTLINE.trigger,
+	},
 })
 
 export const accentButton = style({
@@ -48,11 +50,12 @@ export const iconWrapperStyle = style({
 	width: '4rem',
 	height: '4rem',
 
-	'& > svg': {
-		width: '100%',
-		height: '100%',
-	},
 	[`.${buttonStyle}:not(.${disabledButton}):hover &`]: {
 		animation: `${shakeMiddle} 1s infinite`,
 	},
+})
+
+globalStyle(`.${iconWrapperStyle} > svg`, {
+	width: '100%',
+	height: '100%',
 })

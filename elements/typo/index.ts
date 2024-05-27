@@ -1,5 +1,6 @@
 import { DefineOnce } from '../../util'
 import { smallText, subtitle, textContent, title, token } from './style.css'
+import { COLORS } from '../../colors'
 
 export const TITLE = createClassedComponent('sh-title', title)
 export const SMALL_TEXT = createClassedComponent('sh-small-text', smallText)
@@ -22,4 +23,25 @@ function createClassedComponent(name: string, className: string) {
 	)
 
 	return name
+}
+
+export interface ShadeTypoProps {
+	center?: boolean
+	left?: boolean
+	right?: boolean
+	underline?: boolean
+	'line-through'?: boolean
+	L10?: boolean
+	L9?: boolean
+	L8?: boolean
+	L7?: boolean
+	L6?: boolean
+	L5?: boolean
+	L4?: boolean
+	L3?: boolean
+	L2?: boolean
+	L1?: boolean
+	skyblue?: boolean
+	orange?: boolean
+	children?: any
 }

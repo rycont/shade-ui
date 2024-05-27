@@ -10,7 +10,7 @@ import {
 } from './style.css'
 import spinnerIcon from '../../icons/animated/spinner.svg?raw'
 
-const TYPE_CLASS_MAP = {
+const TYPE_CLASS_MAP: Record<string, string> = {
 	accent: accentButton,
 	secondary: secondaryButton,
 	ghost: ghostButton,
@@ -131,4 +131,14 @@ class ShadeButton extends HTMLElement {
 	}
 }
 
+const NAME = 'sh-button'
 DefineOnce.define('sh-button', ShadeButton)
+export default NAME
+
+export interface ShadeButtonProps {
+	type?: string
+	disabled?: boolean
+	loading?: boolean
+	icon?: string
+	children?: any
+}

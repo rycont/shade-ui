@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { globalStyle, style } from '@vanilla-extract/css'
 import { shakeMiddle, vars } from '../../theme.css'
 import { textContentStyle } from '../typo/style.css'
 
@@ -30,11 +30,13 @@ const ICON_HEIGHT = `var(--sh-floating-button-icon-height, 4rem)`
 export const iconWrapperStyle = style({
 	width: ICON_WIDTH,
 	height: ICON_HEIGHT,
-	'> *': {
-		width: '100%',
-		height: '100%',
-		[`.${floatButtonStyle}:hover &`]: {
-			animation: `${shakeMiddle} 1s infinite`,
-		},
-	},
+})
+
+globalStyle(`.${iconWrapperStyle} > *`, {
+	width: '100%',
+	height: '100%',
+})
+
+globalStyle(`.${floatButtonStyle}:hover .${iconWrapperStyle} > *`, {
+	animation: `${shakeMiddle} 1s infinite`,
 })
