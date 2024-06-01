@@ -33,16 +33,3 @@ export function defaultProps(
 		}
 	}
 }
-
-export type ElementChildren =
-	| (Element | string | undefined | null | number | boolean | Node)[]
-	| (
-			| Element
-			| string
-			| undefined
-			| null
-			| number
-			| boolean
-			| Node
-			| HTMLCollection
-	  )
