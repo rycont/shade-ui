@@ -12,10 +12,10 @@ export const horzStyle = style({
 			justifyContent: 'flex-end',
 		},
 		'&[x=stretch]': {
-			justifyContent: 'space-between',
+			justifyContent: 'stretch',
 		},
 		'&[x=space]': {
-			justifyContent: 'space-around',
+			justifyContent: 'space-between',
 		},
 		'&[y=top]': {
 			alignItems: 'flex-start',
