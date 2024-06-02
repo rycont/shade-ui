@@ -1,6 +1,5 @@
 import { DefineOnce } from '../../util'
 import { smallText, subtitle, textContent, title, token } from './style.css'
-import { COLORS } from '../../colors'
 
 export const TITLE = createClassedComponent('sh-title', title)
 export const SMALL_TEXT = createClassedComponent('sh-small-text', smallText)

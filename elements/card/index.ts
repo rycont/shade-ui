@@ -1,5 +1,5 @@
 import { popAppearStyle } from '../../theme.css'
-import { DefineOnce, ElementChildren } from '../../util'
+import { DefineOnce } from '../../util'
 import { cardStyle } from './style.css'
 
 class ShadeCard extends HTMLElement {
