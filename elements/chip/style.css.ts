@@ -8,4 +8,5 @@ export const chipStyle = style({
 	padding: '2rem 3rem',
 	width: 'fit-content',
 	display: 'inline-block',
+	whiteSpace: 'nowrap',
 })

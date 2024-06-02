@@ -17,5 +17,5 @@ DefineOnce.define(NAME, ShadeDivider)
 export default NAME
 
 export interface ShadeDividerProps {
-	color: keyof typeof COLORS
+	color?: keyof typeof COLORS
 }
