@@ -1,9 +1,11 @@
-import TextIcon from '../../icons/Text.svg?raw'
 import CaneldarIcon from '../../icons/Calendar.svg?raw'
 import PasswordIcon from '../../icons/Password.svg?raw'
-import EmailIcon from '../../icons/Email.svg?raw'
-import OneIcon from '../../icons/One.svg?raw'
 import BlockedIcon from '../../icons/Blocked.svg?raw'
+import SearchIcon from '../../icons/Search.svg?raw'
+import EmailIcon from '../../icons/Email.svg?raw'
+import TextIcon from '../../icons/Text.svg?raw'
+import OneIcon from '../../icons/One.svg?raw'
+
 import { DefineOnce, passAttributes } from '../../util'
 
 import { smallText } from '../typo/style.css'
@@ -24,6 +26,7 @@ const ICONS_BY_TYPE: Record<string, string> = {
 	email: EmailIcon,
 	number: OneIcon,
 	disabled: BlockedIcon,
+	search: SearchIcon,
 }
 
 class ShadeInput extends HTMLElement {
