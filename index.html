@@ -10,6 +10,7 @@
 			src="./elements/container-narrow/index.ts"
 		></script>
 		<script type="module" src="./elements/typo/index.ts"></script>
+		<script type="module" src="./elements/title-bar/index.ts"></script>
 		<script type="module" src="./elements/input/index.ts"></script>
 		<script type="module" src="./elements/label/index.ts"></script>
 		<script type="module" src="./elements/button/index.ts"></script>
@@ -25,7 +26,9 @@
 	</head>
 	<body>
 		<sh-container-narrow>
-			<sh-title> 설정 </sh-title>
+			<sh-title-bar title="설정" back>
+				<sh-button>추가하기</sh-button>
+			</sh-title-bar>
 			<sh-label
 				title="대표 색상"
 				description="대표 색상을 입력해주세요 필수입니다"
