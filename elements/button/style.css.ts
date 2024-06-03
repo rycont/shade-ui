@@ -52,18 +52,29 @@ export const disabledButton = style({
 	},
 })
 
-export const iconWrapperStyle = style({
+export const loadingIcon = style({
 	width: '4rem',
 	height: '4rem',
-
-	[`.${buttonStyle}:not(.${disabledButton}):hover &`]: {
-		animation: `${shakeMiddle} 1s infinite`,
-	},
+	display: 'none',
 })
 
-globalStyle(`.${iconWrapperStyle} > svg`, {
+globalStyle(`.${loadingIcon} > svg`, {
 	width: '100%',
 	height: '100%',
+})
+
+globalStyle(`.${buttonStyle} > img`, {
+	width: '4rem',
+	height: '4rem',
+	filter: 'invert(1)',
+})
+
+globalStyle(`.${ghostButton} > img`, {
+	filter: 'invert(0.2)',
+})
+
+globalStyle(`.${disabledButton} > img`, {
+	filter: 'invert(0.5)',
 })
 
 globalStyle(`a:has(> .${buttonStyle})`, {

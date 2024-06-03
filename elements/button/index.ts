@@ -1,3 +1,4 @@
+import Spinner from '../../icons/animated/spinner.svg?raw'
 import { DefineOnce } from '../../util'
 import { token } from '../typo/style.css'
 import {
@@ -5,10 +6,9 @@ import {
 	buttonStyle,
 	disabledButton,
 	ghostButton,
-	iconWrapperStyle,
+	loadingIcon,
 	secondaryButton,
 } from './style.css'
-import spinnerIcon from '../../icons/animated/spinner.svg?raw'
 
 const TYPE_CLASS_MAP: Record<string, string> = {
 	accent: accentButton,
@@ -17,51 +17,24 @@ const TYPE_CLASS_MAP: Record<string, string> = {
 }
 
 class ShadeButton extends HTMLElement {
-	static observedAttributes = ['disabled', 'type', 'loading', 'icon']
+	static observedAttributes = ['disabled', 'type', 'icon', 'loading']
 	static defaultType = 'primary'
 
 	private typeClass: string | null = null
-	private iconWrapper = document.createElement('span')
+	private loadingIcon = document.createElement('div')
 
 	constructor() {
 		super()
+		this.loadingIcon.classList.add(loadingIcon)
+		this.loadingIcon.innerHTML = Spinner
 	}
 
 	connectedCallback() {
+		this.setAttribute('aria-atomic', 'true')
 		this.classList.add(buttonStyle, token)
-		this.initializeIcon()
+		this.insertAdjacentElement('afterbegin', this.loadingIcon)
+
 		this.setInitialAttributes()
-	}
-
-	initializeIcon() {
-		this.drawIcon()
-		this.insertBefore(this.iconWrapper, this.firstChild)
-
-		this.iconWrapper.classList.add(iconWrapperStyle)
-	}
-
-	async drawIcon() {
-		const icon = await this.getIcon()
-		if (!icon) return
-
-		this.iconWrapper.innerHTML = icon
-	}
-
-	async getIcon() {
-		const isLoading = this.getAttribute('loading') !== null
-
-		if (isLoading) {
-			return spinnerIcon
-		}
-
-		const iconSrc = this.getAttribute('icon')
-
-		if (!iconSrc) {
-			return
-		}
-
-		const icon = await (await fetch(iconSrc)).text()
-		return icon
 	}
 
 	setInitialAttributes() {
@@ -83,24 +56,14 @@ class ShadeButton extends HTMLElement {
 			return
 		}
 
-		if (name === 'loading') {
-			const disabled = this.getAttribute('disabled') !== null
-			this.setDisability(disabled, newValue !== null)
-			this.drawIcon()
-
-			return
-		}
-
 		if (name === 'type') {
 			this.setTypeClass(newValue)
 
 			return
 		}
 
-		if (name === 'icon') {
-			this.drawIcon()
-
-			return
+		if (name === 'loading') {
+			this.setLoading(newValue !== null)
 		}
 	}
 
@@ -127,6 +90,16 @@ class ShadeButton extends HTMLElement {
 			this.classList.remove(disabledButton)
 			this.removeAttribute('aria-disabled')
 			this.setAttribute('tabindex', '0')
+		}
+	}
+
+	setLoading(isLoading: boolean) {
+		if (isLoading) {
+			this.setAttribute('aria-live', 'polite')
+			this.setAttribute('aria-busy', 'true')
+		} else {
+			this.removeAttribute('aria-live')
+			this.removeAttribute('aria-busy')
 		}
 	}
 }
