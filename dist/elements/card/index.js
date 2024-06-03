@@ -1,12 +1,12 @@
 import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
 import { D as a } from "../../util-D2mgkBnY.js";
-var l = "sh-1cu9ibjj", o = "sh-1f7zqr50";
+var o = "sh-1cu9ibjj", l = "sh-1f7zqr50";
 const s = class s extends HTMLElement {
   constructor() {
     super();
   }
   connectedCallback() {
-    this.setAttribute("role", "card"), this.classList.add(o, l);
+    this.setAttribute("role", "card"), this.classList.add(l, o);
   }
   attributeChangedCallback(r, c, t) {
     if (c === t)

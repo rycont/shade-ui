@@ -1,4 +1,4 @@
-import { popAppearStyle } from '../../theme.css'
+import { popAppearProgressiveStyle } from '../../theme.css'
 import { DefineOnce } from '../../util'
 import { cardStyle } from './style.css'
 
@@ -11,7 +11,7 @@ class ShadeCard extends HTMLElement {
 
 	connectedCallback() {
 		this.setAttribute('role', 'card')
-		this.classList.add(cardStyle, popAppearStyle)
+		this.classList.add(cardStyle, popAppearProgressiveStyle)
 	}
 
 	attributeChangedCallback(

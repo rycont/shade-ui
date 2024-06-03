@@ -14,6 +14,12 @@ export const buttonStyle = style({
 	...FOCUS_OUTLINE.default,
 	selectors: {
 		'&:focus:not([disabled])': FOCUS_OUTLINE.trigger,
+		'&[size="big"]': {
+			padding: 'var(--button-padding-big, 3rem 5rem)',
+		},
+		'&[size="bigger"]': {
+			padding: 'var(--button-padding-bigger, 4rem 5rem)',
+		},
 	},
 })
 

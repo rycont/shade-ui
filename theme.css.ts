@@ -1,4 +1,5 @@
 import {
+	CSSProperties,
 	createGlobalTheme,
 	globalStyle,
 	keyframes,
@@ -27,7 +28,7 @@ export const OUTLINE_COLOR = vars.color.L7
 export const FOCUS_OUTLINE = {
 	default: {
 		outline: 'none',
-		transition: vars.timing.ease,
+		transition: 'box-shadow ' + vars.timing.ease,
 	},
 	trigger: {
 		boxShadow: `0 0 0 2px ${OUTLINE_COLOR}`,
@@ -74,24 +75,26 @@ export const popAppear = keyframes({
 	},
 })
 
+const progressiveAppear: Record<string, CSSProperties> = {}
+const gap = 20
+
+for (let i = 2; i < 10; i++) {
+	const selector = [...'&'.repeat(i)].join('+')
+	const rule = {
+		animationDelay: gap * (i - 1) + 'ms',
+	}
+	progressiveAppear[selector] = rule
+}
+
+export const popAppearProgressiveStyle = style({
+	opacity: 0,
+	transform: 'translateY(2rem)',
+	animation: `${popAppear} ${vars.bezier.ease} 3s forwards`,
+	selectors: progressiveAppear,
+})
+
 export const popAppearStyle = style({
 	opacity: 0,
+	transform: 'translateY(2rem)',
 	animation: `${popAppear} ${vars.bezier.ease} 3s forwards`,
-	selectors: {
-		'&+&': {
-			animationDelay: '0.15s',
-		},
-		'&+&+&': {
-			animationDelay: '0.3s',
-		},
-		'&+&+&+&': {
-			animationDelay: '0.45s',
-		},
-		'&+&+&+&+&': {
-			animationDelay: '0.6s',
-		},
-		'&+&+&+&+&+&': {
-			animationDelay: '0.75s',
-		},
-	},
 })
