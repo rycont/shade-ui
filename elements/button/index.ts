@@ -82,15 +82,22 @@ class ShadeButton extends HTMLElement {
 	}
 
 	setDisability(disabled: boolean, isLoading: boolean) {
-		if (disabled || isLoading) {
+		const isChildOfAnchor = this.parentElement instanceof HTMLAnchorElement
+		const isBlocked = disabled || isLoading
+
+		console.log(isChildOfAnchor)
+
+		const tabindex = isChildOfAnchor || isBlocked ? '-1' : '0'
+
+		if (isBlocked) {
 			this.classList.add(disabledButton)
 			this.setAttribute('aria-disabled', 'true')
-			this.setAttribute('tabindex', '-1')
 		} else {
 			this.classList.remove(disabledButton)
 			this.removeAttribute('aria-disabled')
-			this.setAttribute('tabindex', '0')
 		}
+
+		this.setAttribute('tabindex', tabindex)
 	}
 
 	setLoading(isLoading: boolean) {
