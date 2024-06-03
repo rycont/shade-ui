@@ -17,10 +17,19 @@ export const container = style({
 	padding: '6rem',
 	boxSizing: 'border-box',
 	overflowX: 'visible',
+	selectors: {
+		'&[fit-vh]': {
+			height: '100dvh',
+		},
+	},
 })
 
 globalStyle('body', {
 	backgroundColor: BACKDROP_COLOR,
+})
+
+globalStyle(`body:has(.${container}[fit-vh])`, {
+	overflow: 'hidden',
 })
 
 globalStyle(':root', {

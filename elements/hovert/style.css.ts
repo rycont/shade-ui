@@ -29,6 +29,9 @@ export const horzStyle = style({
 		'&[linebreak]': {
 			flexWrap: 'wrap',
 		},
+		'&[scroll]': {
+			overflowX: 'auto',
+		},
 	},
 })
 
@@ -69,6 +72,9 @@ export const vertStyle = style({
 		},
 		'&[linebreak]': {
 			flexWrap: 'wrap',
+		},
+		'&[scroll]': {
+			overflowY: 'auto',
 		},
 	},
 })

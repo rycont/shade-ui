@@ -56,4 +56,5 @@ export interface ShadeHovertProps {
 	linebreak?: boolean
 	x?: 'left' | 'center' | 'right' | 'stretch' | 'space'
 	y?: 'top' | 'center' | 'bottom' | 'stretch' | 'space'
+	scroll?: boolean
 }
