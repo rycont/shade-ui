@@ -57,4 +57,5 @@ export interface ShadeHovertProps {
 	x?: 'left' | 'center' | 'right' | 'stretch' | 'space'
 	y?: 'top' | 'center' | 'bottom' | 'stretch' | 'space'
 	scroll?: boolean
+	fade?: boolean
 }

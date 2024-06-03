@@ -1,4 +1,5 @@
 import { globalStyle, style } from '@vanilla-extract/css'
+import { vars } from '../../theme.css'
 
 export const horzStyle = style({
 	display: 'flex',
@@ -31,6 +32,7 @@ export const horzStyle = style({
 		},
 		'&[scroll]': {
 			overflowX: 'auto',
+			overflowY: 'hidden',
 		},
 	},
 })
@@ -75,8 +77,40 @@ export const vertStyle = style({
 		},
 		'&[scroll]': {
 			overflowY: 'auto',
+			overflowX: 'hidden',
+		},
+		'&[fade]': {
+			position: 'relative',
 		},
 	},
+})
+
+globalStyle(`.${vertStyle}[fade]::before`, {
+	content: '""',
+	position: 'sticky',
+	top: '-2rem',
+	right: 0,
+	width: '100%',
+	background: `linear-gradient(180deg, ${vars.color.L1} 0%, rgba(255, 255, 255, 0) 100%)`,
+	display: 'block',
+	padding: 'var(--fade-size, 6rem)',
+	marginTop: '-12rem',
+	zIndex: 10,
+	pointerEvents: 'none',
+})
+
+globalStyle(`.${vertStyle}[fade]::after`, {
+	content: '""',
+	position: 'sticky',
+	bottom: '-2rem',
+	right: 0,
+	width: '100%',
+	display: 'block',
+	padding: 'var(--fade-size, 6rem)',
+	background: `linear-gradient(0deg, ${vars.color.L1} 0%, rgba(255, 255, 255, 0) 100%)`,
+	marginTop: '-12rem',
+	zIndex: 10,
+	pointerEvents: 'none',
 })
 
 globalStyle(`.${vertStyle} > [data-fillx]`, {
