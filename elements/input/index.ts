@@ -32,13 +32,14 @@ const ICONS_BY_TYPE: Record<string, string> = {
 }
 
 class ShadeInput extends HTMLElement {
-	input = this.buildInput()
+	input?: HTMLInputElement
 
 	constructor() {
 		super()
 	}
 
 	connectedCallback() {
+		this.input = this.buildInput()
 		this.classList.add(wrapperStyle)
 
 		const inputTypeWrapper = this.buildIcon()
@@ -61,6 +62,10 @@ class ShadeInput extends HTMLElement {
 		])
 
 		this.appendChild(inputTypeWrapper)
+
+		if (this.getAttribute('autofocus') !== null) {
+			this.input.focus()
+		}
 	}
 
 	buildInput() {

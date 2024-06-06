@@ -16,33 +16,36 @@ const g = {
   connectedCallback() {
     this.addEventListener("click", (t) => {
       this.getAttribute("type") === "submit" && this.submit();
+    }), this.addEventListener("keydown", (t) => {
+      const s = t.key === "Enter", i = t.key === " ";
+      !s && !i || this.getAttribute("type") === "submit" && this.submit();
     }), this.setAttribute("aria-atomic", "true"), this.classList.add(c, d), this.insertAdjacentElement("afterbegin", this.loadingIcon), this.setInitialAttributes();
   }
   submit() {
-    var i, s;
+    var s, i;
     const t = document.createElement("input");
-    t.type = "submit", t.style.display = "none", (i = this.parentElement) == null || i.appendChild(t), t.click(), (s = this.parentElement) == null || s.removeChild(t);
+    t.type = "submit", t.style.display = "none", (s = this.parentElement) == null || s.appendChild(t), t.click(), (i = this.parentElement) == null || i.removeChild(t);
   }
   setInitialAttributes() {
     const t = this.getAttribute("type") || n.defaultType;
     this.setTypeClass(t);
-    const i = this.getAttribute("disabled") !== null, s = this.getAttribute("loading") !== null;
-    this.setDisability(i, s);
+    const s = this.getAttribute("disabled") !== null, i = this.getAttribute("loading") !== null;
+    this.setDisability(s, i);
   }
-  attributeChangedCallback(t, i, s) {
+  attributeChangedCallback(t, s, i) {
     if (t === "disabled") {
       const e = this.getAttribute("loading") !== null;
-      this.setDisability(s !== null, e);
+      this.setDisability(i !== null, e);
       return;
     }
     if (t === "type") {
-      this.setTypeClass(s);
+      this.setTypeClass(i);
       return;
     }
     if (t === "loading") {
-      this.setLoading(s !== null);
+      this.setLoading(i !== null);
       const e = this.getAttribute("disabled") !== null;
-      this.setDisability(e, s !== null), console.log(e, s);
+      this.setDisability(e, i !== null), console.log(e, i);
       return;
     }
   }
@@ -50,15 +53,20 @@ const g = {
     if (!t)
       return;
     this.typeClass && this.classList.remove(this.typeClass);
-    const i = g[t];
-    i && (this.classList.add(i), this.typeClass = i);
+    const s = g[t];
+    s && (this.classList.add(s), this.typeClass = s);
   }
-  setDisability(t, i) {
-    const s = this.parentElement instanceof HTMLAnchorElement, e = t || i, r = s || e ? "-1" : "0";
+  setDisability(t, s) {
+    const i = this.parentElement instanceof HTMLAnchorElement, e = t || s, r = i || e ? "-1" : "0";
     e ? (this.classList.add(l), this.setAttribute("aria-disabled", "true")) : (this.classList.remove(l), this.removeAttribute("aria-disabled")), this.setAttribute("tabindex", r);
   }
   setLoading(t) {
     t ? (this.setAttribute("aria-live", "polite"), this.setAttribute("aria-busy", "true"), this.loadingIcon.style.setProperty("display", "block")) : (this.removeAttribute("aria-live"), this.removeAttribute("aria-busy"), this.loadingIcon.style.setProperty("display", "none"));
+  }
+  set textContent(t) {
+    this.childNodes.forEach((s) => {
+      s instanceof Text && (s.textContent = t);
+    });
   }
 };
 n.observedAttributes = ["disabled", "type", "icon", "loading"], n.defaultType = "primary";

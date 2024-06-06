@@ -38,6 +38,19 @@ class ShadeButton extends HTMLElement {
 			}
 		})
 
+		this.addEventListener('keydown', (event) => {
+			const isEnter = event.key === 'Enter'
+			const isSpace = event.key === ' '
+
+			if (!isEnter && !isSpace) {
+				return
+			}
+
+			if (this.getAttribute('type') === 'submit') {
+				this.submit()
+			}
+		})
+
 		this.setAttribute('aria-atomic', 'true')
 		this.classList.add(buttonStyle, token)
 		this.insertAdjacentElement('afterbegin', this.loadingIcon)
@@ -132,6 +145,14 @@ class ShadeButton extends HTMLElement {
 			this.removeAttribute('aria-busy')
 			this.loadingIcon.style.setProperty('display', 'none')
 		}
+	}
+
+	set textContent(value: string) {
+		this.childNodes.forEach((node) => {
+			if (node instanceof Text) {
+				node.textContent = value
+			}
+		})
 	}
 }
 
