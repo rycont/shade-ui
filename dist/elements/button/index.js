@@ -4,7 +4,7 @@ import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
 const h = `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <style>.spinner_aj0A{transform-origin:center;animation:spinner_KYSC .75s infinite linear}@keyframes spinner_KYSC{100%{transform:rotate(360deg)}}</style>
 <path d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z" class="spinner_aj0A" fill="currentColor"/></svg>`;
-var c = "sh-ldku260", u = "sh-ldku261", b = "sh-ldku262", p = "sh-ldku263", l = "sh-ldku264", y = "sh-ldku265";
+var c = "sh-ldku260", u = "sh-ldku261", b = "sh-ldku262", p = "sh-ldku263", r = "sh-ldku264", y = "sh-ldku265";
 const g = {
   accent: u,
   secondary: b,
@@ -57,22 +57,23 @@ const g = {
     s && (this.classList.add(s), this.typeClass = s);
   }
   setDisability(t, s) {
-    const i = this.parentElement instanceof HTMLAnchorElement, e = t || s, r = i || e ? "-1" : "0";
-    e ? (this.classList.add(l), this.setAttribute("aria-disabled", "true")) : (this.classList.remove(l), this.removeAttribute("aria-disabled")), this.setAttribute("tabindex", r);
+    const i = this.parentElement instanceof HTMLAnchorElement, e = t || s, a = i || e ? "-1" : "0";
+    e ? (this.classList.add(r), this.setAttribute("aria-disabled", "true")) : (this.classList.remove(r), this.removeAttribute("aria-disabled")), this.setAttribute("tabindex", a);
   }
   setLoading(t) {
     t ? (this.setAttribute("aria-live", "polite"), this.setAttribute("aria-busy", "true"), this.loadingIcon.style.setProperty("display", "block")) : (this.removeAttribute("aria-live"), this.removeAttribute("aria-busy"), this.loadingIcon.style.setProperty("display", "none"));
   }
   set textContent(t) {
     this.childNodes.forEach((s) => {
-      s instanceof Text && (s.textContent = t);
+      var a;
+      !(s instanceof Text) || !((a = s.textContent) != null && a.trim().length) || (s.textContent = t);
     });
   }
 };
 n.observedAttributes = ["disabled", "type", "icon", "loading"], n.defaultType = "primary";
-let a = n;
+let l = n;
 const v = "sh-button";
-o.define("sh-button", a);
+o.define("sh-button", l);
 export {
   v as default
 };

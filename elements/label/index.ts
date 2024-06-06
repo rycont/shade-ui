@@ -1,5 +1,5 @@
 import '../typo/index'
-import { SMALL_TEXT, SUBTITLE, TEXT_CONTENT } from '../typo/index'
+import { SMALL_TEXT, SUBTITLE } from '../typo/index'
 import { DefineOnce } from '../../util'
 import {
 	descriptionStyle,

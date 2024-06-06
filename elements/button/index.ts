@@ -149,9 +149,13 @@ class ShadeButton extends HTMLElement {
 
 	set textContent(value: string) {
 		this.childNodes.forEach((node) => {
-			if (node instanceof Text) {
-				node.textContent = value
-			}
+			const isText = node instanceof Text
+			if (!isText) return
+
+			const hasValidText = node.textContent?.trim().length
+			if (!hasValidText) return
+
+			node.textContent = value
 		})
 	}
 }
