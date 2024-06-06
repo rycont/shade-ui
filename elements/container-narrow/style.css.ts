@@ -37,3 +37,7 @@ globalStyle(':root', {
 		[NARROW_CONTAINER_WIDTH]: '540px',
 	},
 })
+
+globalStyle(`.${container} > [data-filly]`, {
+	flex: 1,
+})

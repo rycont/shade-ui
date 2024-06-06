@@ -12,6 +12,7 @@ export const buttonStyle = style({
 	alignItems: 'center',
 	gap: '1rem',
 	...FOCUS_OUTLINE.default,
+	transition: 'background-color ' + FOCUS_OUTLINE.default.transition,
 	selectors: {
 		'&:focus:not([disabled])': FOCUS_OUTLINE.trigger,
 		'&[size="big"]': {

@@ -4,6 +4,7 @@ import BlockedIcon from '../../icons/Blocked.svg?raw'
 import SearchIcon from '../../icons/Search.svg?raw'
 import EmailIcon from '../../icons/Email.svg?raw'
 import TextIcon from '../../icons/Text.svg?raw'
+import LinkIcon from '../../icons/Link.svg?raw'
 import OneIcon from '../../icons/One.svg?raw'
 
 import { DefineOnce, passAttributes } from '../../util'
@@ -27,6 +28,7 @@ const ICONS_BY_TYPE: Record<string, string> = {
 	number: OneIcon,
 	disabled: BlockedIcon,
 	search: SearchIcon,
+	url: LinkIcon,
 }
 
 class ShadeInput extends HTMLElement {
@@ -40,8 +42,6 @@ class ShadeInput extends HTMLElement {
 		this.classList.add(wrapperStyle)
 
 		const inputTypeWrapper = this.buildIcon()
-
-		this.appendChild(inputTypeWrapper)
 
 		passAttributes(this.input, this, [
 			'placeholder',
@@ -57,7 +57,10 @@ class ShadeInput extends HTMLElement {
 			'pattern',
 			'inputmode',
 			'name',
+			'required',
 		])
+
+		this.appendChild(inputTypeWrapper)
 	}
 
 	buildInput() {

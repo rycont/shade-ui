@@ -16,6 +16,8 @@ const TYPE_CLASS_MAP: Record<string, string> = {
 	ghost: ghostButton,
 }
 
+// TODO: Reimplement ShadeButton component
+
 class ShadeButton extends HTMLElement {
 	static observedAttributes = ['disabled', 'type', 'icon', 'loading']
 	static defaultType = 'primary'
@@ -30,11 +32,27 @@ class ShadeButton extends HTMLElement {
 	}
 
 	connectedCallback() {
+		this.addEventListener('click', (event) => {
+			if (this.getAttribute('type') === 'submit') {
+				this.submit()
+			}
+		})
+
 		this.setAttribute('aria-atomic', 'true')
 		this.classList.add(buttonStyle, token)
 		this.insertAdjacentElement('afterbegin', this.loadingIcon)
 
 		this.setInitialAttributes()
+	}
+
+	submit() {
+		const virtualSubmitButton = document.createElement('input')
+		virtualSubmitButton.type = 'submit'
+		virtualSubmitButton.style.display = 'none'
+
+		this.parentElement?.appendChild(virtualSubmitButton)
+		virtualSubmitButton.click()
+		this.parentElement?.removeChild(virtualSubmitButton)
 	}
 
 	setInitialAttributes() {
@@ -64,6 +82,12 @@ class ShadeButton extends HTMLElement {
 
 		if (name === 'loading') {
 			this.setLoading(newValue !== null)
+
+			const isDisabled = this.getAttribute('disabled') !== null
+			this.setDisability(isDisabled, newValue !== null)
+			console.log(isDisabled, newValue)
+
+			return
 		}
 	}
 
@@ -85,8 +109,6 @@ class ShadeButton extends HTMLElement {
 		const isChildOfAnchor = this.parentElement instanceof HTMLAnchorElement
 		const isBlocked = disabled || isLoading
 
-		console.log(isChildOfAnchor)
-
 		const tabindex = isChildOfAnchor || isBlocked ? '-1' : '0'
 
 		if (isBlocked) {
@@ -104,9 +126,11 @@ class ShadeButton extends HTMLElement {
 		if (isLoading) {
 			this.setAttribute('aria-live', 'polite')
 			this.setAttribute('aria-busy', 'true')
+			this.loadingIcon.style.setProperty('display', 'block')
 		} else {
 			this.removeAttribute('aria-live')
 			this.removeAttribute('aria-busy')
+			this.loadingIcon.style.setProperty('display', 'none')
 		}
 	}
 }
