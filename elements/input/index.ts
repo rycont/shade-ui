@@ -32,6 +32,24 @@ const ICONS_BY_TYPE: Record<string, string> = {
 }
 
 class ShadeInput extends HTMLElement {
+	static passingProps = [
+		'placeholder',
+		'type',
+		'value',
+		'autofocus',
+		'disabled',
+		'max',
+		'min',
+		'list',
+		'readonly',
+		'step',
+		'pattern',
+		'inputmode',
+		'name',
+		'required',
+	]
+	static observedAttributes = ShadeInput.passingProps
+
 	input?: HTMLInputElement
 
 	constructor() {
@@ -44,22 +62,7 @@ class ShadeInput extends HTMLElement {
 
 		const inputTypeWrapper = this.buildIcon()
 
-		passAttributes(this.input, this, [
-			'placeholder',
-			'type',
-			'value',
-			'autofocus',
-			'disabled',
-			'max',
-			'min',
-			'list',
-			'readonly',
-			'step',
-			'pattern',
-			'inputmode',
-			'name',
-			'required',
-		])
+		passAttributes(this.input, this, ShadeInput.passingProps)
 
 		this.appendChild(inputTypeWrapper)
 
@@ -100,6 +103,16 @@ class ShadeInput extends HTMLElement {
 		}
 
 		return this.getAttribute('type') || DEFAULT_INPUT_TYPE
+	}
+
+	attributeChangedCallback(
+		name: string,
+		_oldValue: string,
+		newValue: string,
+	) {
+		if (this.input && ShadeInput.passingProps.includes(name)) {
+			this.input.setAttribute(name, newValue)
+		}
 	}
 }
 

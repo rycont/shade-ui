@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css'
 import { FOCUS_OUTLINE, shake, shakeSmall, vars } from '../../theme.css'
 
 export const wrapperStyle = style({
-	border: `2px solid ${vars.color.L3}`,
+	border: `1px solid ${vars.color.L3}`,
 	display: 'flex',
 	alignItems: 'center',
 	justifyContent: 'space-between',

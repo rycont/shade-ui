@@ -48,6 +48,8 @@ class ShadeButton extends HTMLElement {
 
 			if (this.getAttribute('type') === 'submit') {
 				this.submit()
+			} else {
+				this.click()
 			}
 		})
 

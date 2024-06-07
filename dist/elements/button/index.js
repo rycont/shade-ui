@@ -4,7 +4,7 @@ import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
 const h = `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <style>.spinner_aj0A{transform-origin:center;animation:spinner_KYSC .75s infinite linear}@keyframes spinner_KYSC{100%{transform:rotate(360deg)}}</style>
 <path d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z" class="spinner_aj0A" fill="currentColor"/></svg>`;
-var c = "sh-ldku260", u = "sh-ldku261", b = "sh-ldku262", p = "sh-ldku263", r = "sh-ldku264", y = "sh-ldku265";
+var c = "sh-ldku260", u = "sh-ldku261", b = "sh-ldku262", p = "sh-ldku263", l = "sh-ldku264", y = "sh-ldku265";
 const m = {
   accent: u,
   secondary: b,
@@ -18,7 +18,7 @@ const m = {
       this.getAttribute("type") === "submit" && this.submit();
     }), this.addEventListener("keydown", (t) => {
       const e = t.key === "Enter", s = t.key === " ";
-      !e && !s || this.getAttribute("type") === "submit" && this.submit();
+      !e && !s || (this.getAttribute("type") === "submit" ? this.submit() : this.click());
     }), this.setAttribute("aria-atomic", "true"), this.classList.add(c, d), this.insertAdjacentElement("afterbegin", this.loadingIcon), this.setInitialAttributes();
   }
   submit() {
@@ -57,8 +57,8 @@ const m = {
     e && (this.classList.add(e), this.typeClass = e);
   }
   setDisability(t, e) {
-    const s = this.parentElement instanceof HTMLAnchorElement, i = t || e, l = s || i ? "-1" : "0";
-    i ? (this.classList.add(r), this.setAttribute("aria-disabled", "true")) : (this.classList.remove(r), this.removeAttribute("aria-disabled")), this.setAttribute("tabindex", l);
+    const s = this.parentElement instanceof HTMLAnchorElement, i = t || e, r = s || i ? "-1" : "0";
+    i ? (this.classList.add(l), this.setAttribute("aria-disabled", "true")) : (this.classList.remove(l), this.removeAttribute("aria-disabled")), this.setAttribute("tabindex", r);
   }
   setLoading(t) {
     t ? (this.setAttribute("aria-live", "polite"), this.setAttribute("aria-busy", "true"), this.loadingIcon.style.setProperty("display", "block")) : (this.removeAttribute("aria-live"), this.removeAttribute("aria-busy"), this.loadingIcon.style.setProperty("display", "none"));

@@ -86,12 +86,15 @@ for (let i = 2; i < 10; i++) {
 	progressiveAppear[selector] = rule
 }
 
-export const popAppearProgressiveStyle = style({
-	opacity: 0,
-	transform: 'translateY(2rem)',
-	animation: `${popAppear} ${vars.bezier.ease} 3s forwards`,
-	selectors: progressiveAppear,
-})
+export const popAppearProgressiveStyle = style(
+	{
+		opacity: 0,
+		transform: 'translateY(2rem)',
+		animation: `${popAppear} ${vars.bezier.ease} 3s forwards`,
+		selectors: progressiveAppear,
+	},
+	'progressively-appear',
+)
 
 export const popAppearStyle = style({
 	opacity: 0,

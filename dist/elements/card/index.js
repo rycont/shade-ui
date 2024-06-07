@@ -1,15 +1,15 @@
 import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
-import { D as a } from "../../util-D2mgkBnY.js";
-var o = "sh-1cu9ibjj", l = "sh-1f7zqr50";
+import { D as p } from "../../util-D2mgkBnY.js";
+var o = "sh-progressively-appear", c = "sh-1f7zqr50";
 const s = class s extends HTMLElement {
   constructor() {
     super();
   }
   connectedCallback() {
-    this.setAttribute("role", "card"), this.classList.add(l, o);
+    this.setAttribute("role", "card"), this.classList.add(c, o);
   }
-  attributeChangedCallback(r, c, t) {
-    if (c === t)
+  attributeChangedCallback(r, a, t) {
+    if (a === t)
       return;
     const i = t === null ? "0rem" : +t + "rem";
     r === "p" && this.style.setProperty("padding", i), r === "g" && this.style.setProperty("gap", i);
@@ -17,9 +17,9 @@ const s = class s extends HTMLElement {
 };
 s.observedAttributes = ["p", "g"];
 let e = s;
-const p = "sh-card";
-a.define(p, e);
+const l = "sh-card";
+p.define(l, e);
 export {
-  p as default
+  l as default
 };
 //# sourceMappingURL=index.js.map
