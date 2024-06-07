@@ -32,7 +32,7 @@ class ShadeButton extends HTMLElement {
 	}
 
 	connectedCallback() {
-		this.addEventListener('click', (event) => {
+		this.addEventListener('click', () => {
 			if (this.getAttribute('type') === 'submit') {
 				this.submit()
 			}
@@ -81,7 +81,11 @@ class ShadeButton extends HTMLElement {
 		this.setDisability(disabled, isLoading)
 	}
 
-	attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+	attributeChangedCallback(
+		name: string,
+		_oldValue: string,
+		newValue: string,
+	) {
 		if (name === 'disabled') {
 			const isLoading = this.getAttribute('loading') !== null
 			this.setDisability(newValue !== null, isLoading)

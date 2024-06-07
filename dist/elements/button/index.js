@@ -14,28 +14,28 @@ const m = {
     super(), this.typeClass = null, this.loadingIcon = document.createElement("div"), this.loadingIcon.classList.add(y), this.loadingIcon.innerHTML = h;
   }
   connectedCallback() {
-    this.addEventListener("click", (t) => {
+    this.addEventListener("click", () => {
       this.getAttribute("type") === "submit" && this.submit();
     }), this.addEventListener("keydown", (t) => {
-      const e = t.key === "Enter", s = t.key === " ";
-      !e && !s || (this.getAttribute("type") === "submit" ? this.submit() : this.click());
+      const i = t.key === "Enter", s = t.key === " ";
+      !i && !s || (this.getAttribute("type") === "submit" ? this.submit() : this.click());
     }), this.setAttribute("aria-atomic", "true"), this.classList.add(c, d), this.insertAdjacentElement("afterbegin", this.loadingIcon), this.setInitialAttributes();
   }
   submit() {
-    var e, s;
+    var i, s;
     const t = document.createElement("input");
-    t.type = "submit", t.style.display = "none", (e = this.parentElement) == null || e.appendChild(t), t.click(), (s = this.parentElement) == null || s.removeChild(t);
+    t.type = "submit", t.style.display = "none", (i = this.parentElement) == null || i.appendChild(t), t.click(), (s = this.parentElement) == null || s.removeChild(t);
   }
   setInitialAttributes() {
     const t = this.getAttribute("type") || n.defaultType;
     this.setTypeClass(t);
-    const e = this.getAttribute("disabled") !== null, s = this.getAttribute("loading") !== null;
-    this.setDisability(e, s);
+    const i = this.getAttribute("disabled") !== null, s = this.getAttribute("loading") !== null;
+    this.setDisability(i, s);
   }
-  attributeChangedCallback(t, e, s) {
+  attributeChangedCallback(t, i, s) {
     if (t === "disabled") {
-      const i = this.getAttribute("loading") !== null;
-      this.setDisability(s !== null, i);
+      const e = this.getAttribute("loading") !== null;
+      this.setDisability(s !== null, e);
       return;
     }
     if (t === "type") {
@@ -44,8 +44,8 @@ const m = {
     }
     if (t === "loading") {
       this.setLoading(s !== null);
-      const i = this.getAttribute("disabled") !== null;
-      this.setDisability(i, s !== null), console.log(i, s);
+      const e = this.getAttribute("disabled") !== null;
+      this.setDisability(e, s !== null), console.log(e, s);
       return;
     }
   }
@@ -53,24 +53,24 @@ const m = {
     if (!t)
       return;
     this.typeClass && this.classList.remove(this.typeClass);
-    const e = m[t];
-    e && (this.classList.add(e), this.typeClass = e);
+    const i = m[t];
+    i && (this.classList.add(i), this.typeClass = i);
   }
-  setDisability(t, e) {
-    const s = this.parentElement instanceof HTMLAnchorElement, i = t || e, r = s || i ? "-1" : "0";
-    i ? (this.classList.add(l), this.setAttribute("aria-disabled", "true")) : (this.classList.remove(l), this.removeAttribute("aria-disabled")), this.setAttribute("tabindex", r);
+  setDisability(t, i) {
+    const s = this.parentElement instanceof HTMLAnchorElement, e = t || i, r = s || e ? "-1" : "0";
+    e ? (this.classList.add(l), this.setAttribute("aria-disabled", "true")) : (this.classList.remove(l), this.removeAttribute("aria-disabled")), this.setAttribute("tabindex", r);
   }
   setLoading(t) {
     t ? (this.setAttribute("aria-live", "polite"), this.setAttribute("aria-busy", "true"), this.loadingIcon.style.setProperty("display", "block")) : (this.removeAttribute("aria-live"), this.removeAttribute("aria-busy"), this.loadingIcon.style.setProperty("display", "none"));
   }
   set textContent(t) {
-    const e = Array.from(this.childNodes).filter(
+    const i = Array.from(this.childNodes).filter(
       (s) => {
-        var i;
-        return s instanceof Text && ((i = s.textContent) == null ? void 0 : i.trim().length);
+        var e;
+        return s instanceof Text && ((e = s.textContent) == null ? void 0 : e.trim().length);
       }
     );
-    for (const s of e)
+    for (const s of i)
       this.removeChild(s);
     this.appendChild(document.createTextNode(t));
   }
