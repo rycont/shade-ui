@@ -8,7 +8,7 @@ export const NARROW_CONTAINER_WIDTH = '--sh-narrow-container-width'
 
 export const container = style({
 	backgroundColor: BACKGROUND_COLOR,
-	minHeight: '100vh',
+	minHeight: '100dvh',
 	display: 'flex',
 	flexDirection: 'column',
 	gap: '6rem',
@@ -20,6 +20,7 @@ export const container = style({
 	selectors: {
 		'&[fit-vh]': {
 			height: '100dvh',
+			overflowY: 'hidden',
 		},
 	},
 })

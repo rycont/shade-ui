@@ -10,6 +10,7 @@ export const wrapperStyle = style({
 	boxSizing: 'border-box',
 	backgroundColor: vars.color.L1,
 	borderRadius: '3rem',
+	overflow: 'hidden',
 	...FOCUS_OUTLINE.default,
 	':focus-within': FOCUS_OUTLINE.trigger,
 	selectors: {
@@ -25,6 +26,7 @@ export const inputStyle = style({
 	border: 'none',
 	backgroundColor: 'transparent',
 	flex: 1,
+
 	color: vars.color.L9,
 	'::placeholder': {
 		color: vars.color.L7,

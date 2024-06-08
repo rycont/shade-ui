@@ -90,7 +90,7 @@ export const popAppearProgressiveStyle = style(
 	{
 		opacity: 0,
 		transform: 'translateY(2rem)',
-		animation: `${popAppear} ${vars.bezier.ease} 3s forwards`,
+		animation: `${popAppear} ${vars.bezier.ease} 2s forwards`,
 		selectors: progressiveAppear,
 	},
 	'progressively-appear',
@@ -99,5 +99,5 @@ export const popAppearProgressiveStyle = style(
 export const popAppearStyle = style({
 	opacity: 0,
 	transform: 'translateY(2rem)',
-	animation: `${popAppear} ${vars.bezier.ease} 3s forwards`,
+	animation: `${popAppear} ${vars.bezier.ease} 2s forwards`,
 })
