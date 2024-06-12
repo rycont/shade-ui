@@ -104,7 +104,6 @@ class ShadeButton extends HTMLElement {
 
 			const isDisabled = this.getAttribute('disabled') !== null
 			this.setDisability(isDisabled, newValue !== null)
-			console.log(isDisabled, newValue)
 
 			return
 		}

@@ -45,7 +45,7 @@ const m = {
     if (t === "loading") {
       this.setLoading(s !== null);
       const e = this.getAttribute("disabled") !== null;
-      this.setDisability(e, s !== null), console.log(e, s);
+      this.setDisability(e, s !== null);
       return;
     }
   }
