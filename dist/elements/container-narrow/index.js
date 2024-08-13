@@ -1,5 +1,5 @@
 import { D as e } from "../../util-D2mgkBnY.js";
-import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
+/* empty css                                  */
 var n = "sh-cv4bfu0";
 class a extends HTMLElement {
   constructor() {

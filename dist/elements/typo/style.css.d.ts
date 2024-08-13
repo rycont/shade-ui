@@ -6,6 +6,10 @@ export declare const smallTextStyle: {
     fontSize: string;
     fontWeight: string;
 };
+export declare const subtitleStyle: {
+    fontSize: string;
+    fontWeight: string;
+};
 export declare const textContentStyle: {
     fontSize: string;
     fontWeight: string;

@@ -1,6 +1,6 @@
 import { D as e } from "../../util-D2mgkBnY.js";
 import { s } from "../../style.css-Bma0hoQJ.js";
-import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
+/* empty css                                  */
 var a = "sh-1dm6prh0";
 class t extends HTMLElement {
   connectedCallback() {

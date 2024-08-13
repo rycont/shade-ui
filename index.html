@@ -20,6 +20,7 @@
 		<script type="module" src="./elements/inline-link/index.ts"></script>
 		<script type="module" src="./elements/chip/index.ts"></script>
 		<script type="module" src="./elements/divider/index.ts"></script>
+		<script type="module" src="./elements/tab/index.ts"></script>
 		<script
 			type="module"
 			src="./elements/floating-button/index.ts"
@@ -32,6 +33,16 @@
 					><img src="/icons/AddFile.svg" />추가하기
 				</sh-button>
 			</sh-title-bar>
+			<sh-tab role="tablist">
+				<sh-tab-item role="tab"
+					><img src="/icons/Send.svg" />설정</sh-tab-item
+				>
+				<a href="https://github.com/rycont/shade-ui/issues/1"
+					><sh-tab-item active
+						><img src="/icons/User.svg" />프로필</sh-tab-item
+					></a
+				>
+			</sh-tab>
 			<sh-label
 				title="대표 색상"
 				description="대표 색상을 입력해주세요 필수입니다"

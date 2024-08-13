@@ -1,5 +1,5 @@
 import { p as i, D as c } from "../../util-D2mgkBnY.js";
-import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
+/* empty css                                  */
 var n = "sh-1iu60wv0";
 const s = class s extends HTMLElement {
   constructor() {

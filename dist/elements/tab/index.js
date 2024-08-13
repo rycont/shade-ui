@@ -1,17 +1,15 @@
 import { D as e } from "../../util-D2mgkBnY.js";
 /* empty css                                  */
-var s = "sh-161513h0";
+/* empty css                                  */
+var a = "sh-14x86aq0";
 class t extends HTMLElement {
-  constructor() {
-    super();
-  }
   connectedCallback() {
-    this.classList.add(s);
+    this.classList.add(a);
   }
 }
-const d = "sh-divider";
-e.define(d, t);
+const s = "sh-tab";
+e.define(s, t);
 export {
-  d as default
+  s as default
 };
 //# sourceMappingURL=index.js.map

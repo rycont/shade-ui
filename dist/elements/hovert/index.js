@@ -1,5 +1,5 @@
 import { D as d } from "../../util-D2mgkBnY.js";
-import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
+/* empty css                                  */
 var a = "sh-1mtdroy0", c = "sh-1mtdroy1";
 const l = class l extends HTMLElement {
   connectedCallback() {

@@ -47,7 +47,7 @@ export const smallTextStyle = {
 	fontWeight: '500',
 }
 
-const subtitleStyle = {
+export const subtitleStyle = {
 	fontSize: '4.5rem',
 	fontWeight: '700',
 }
