@@ -1,6 +1,6 @@
 import { D as i } from "../../util-D2mgkBnY.js";
-import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
-import "../../style.css.ts.vanilla-l0sNRNKZ.js";
+/* empty css                                  */
+/* empty css                                  */
 var r = "sh-1y8b0hx0", s = "sh-1y8b0hx1";
 class n extends HTMLElement {
   constructor() {
@@ -11,15 +11,13 @@ class n extends HTMLElement {
   }
   async drawIcon() {
     const t = this.getAttribute("icon");
-    if (!t)
-      return;
+    if (!t) return;
     const o = await (await fetch(t)).text();
     this.iconWrapper.innerHTML = o, this.insertBefore(this.iconWrapper, this.firstChild), this.setIconSize();
   }
   setIconSize() {
     const t = this.iconWrapper;
-    if (!t)
-      return;
+    if (!t) return;
     const e = this.getAttribute("icon-width"), o = this.getAttribute("icon-height");
     e && t.style.setProperty(
       "--sh-floating-button-icon-width",

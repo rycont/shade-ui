@@ -1,4 +1,4 @@
-import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
+/* empty css                                  */
 import { D as p } from "../../util-D2mgkBnY.js";
 var o = "sh-progressively-appear", c = "sh-1f7zqr50";
 const s = class s extends HTMLElement {
@@ -9,8 +9,7 @@ const s = class s extends HTMLElement {
     this.setAttribute("role", "card"), this.classList.add(c, o);
   }
   attributeChangedCallback(r, a, t) {
-    if (a === t)
-      return;
+    if (a === t) return;
     const i = t === null ? "0rem" : +t + "rem";
     r === "p" && this.style.setProperty("padding", i), r === "g" && this.style.setProperty("gap", i);
   }

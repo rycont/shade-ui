@@ -1,6 +1,6 @@
 import { SUBTITLE as c, SMALL_TEXT as E } from "../typo/index.js";
 import { D as h } from "../../util-D2mgkBnY.js";
-import "../../theme.css.ts.vanilla-l0sNRNKZ.js";
+/* empty css                                  */
 var d = "sh-1t9t5490", p = "sh-1t9t5491", g = "sh-1t9t5492", u = "sh-1t9t5493";
 const m = class m extends HTMLElement {
   constructor() {
