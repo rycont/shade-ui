@@ -47,6 +47,22 @@ class ShadeInput extends HTMLElement {
 		'inputmode',
 		'name',
 		'required',
+		'maxlength',
+		'minlength',
+		'multiple',
+		'size',
+		'accept',
+		'autocomplete',
+		'checked',
+		'form',
+		'formaction',
+		'formenctype',
+		'formmethod',
+		'formnovalidate',
+		'formtarget',
+		'height',
+		'width',
+		'list',
 	]
 	static observedAttributes = ShadeInput.passingProps
 
