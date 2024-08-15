@@ -16,4 +16,20 @@ export interface ShadeInputProps {
     name?: string;
     icon?: string;
     children?: any;
+    required?: boolean;
+    maxlength?: number;
+    minlength?: number;
+    multiple?: boolean;
+    size?: number;
+    accept?: string;
+    autocomplete?: string;
+    checked?: boolean;
+    form?: string;
+    formaction?: string;
+    formenctype?: string;
+    formmethod?: string;
+    formnovalidate?: boolean;
+    formtarget?: string;
+    height?: number;
+    width?: number;
 }

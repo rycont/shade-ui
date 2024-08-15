@@ -90,8 +90,7 @@ e.passingProps = [
   "formnovalidate",
   "formtarget",
   "height",
-  "width",
-  "list"
+  "width"
 ], e.observedAttributes = e.passingProps;
 let o = e;
 const x = "sh-input";
