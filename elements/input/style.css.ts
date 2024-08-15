@@ -26,6 +26,7 @@ export const inputStyle = style({
 	border: 'none',
 	backgroundColor: 'transparent',
 	flex: 1,
+	width: '100%',
 
 	color: vars.color.L9,
 	'::placeholder': {
