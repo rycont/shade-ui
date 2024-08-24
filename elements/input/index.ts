@@ -66,6 +66,7 @@ class ShadeInput extends HTMLElement {
 	static observedAttributes = ShadeInput.passingProps
 
 	input?: HTMLInputElement
+	inputTypeWrapper?: HTMLSpanElement
 
 	constructor() {
 		super()
@@ -76,6 +77,7 @@ class ShadeInput extends HTMLElement {
 		this.classList.add(wrapperStyle)
 
 		const inputTypeWrapper = this.buildIcon()
+		this.inputTypeWrapper = inputTypeWrapper
 
 		passAttributes(this.input, this, ShadeInput.passingProps)
 
@@ -87,6 +89,10 @@ class ShadeInput extends HTMLElement {
 	}
 
 	buildInput() {
+		if (this.input) {
+			return this.input
+		}
+
 		const input = document.createElement('input')
 
 		input.classList.add(inputStyle, smallText)
@@ -96,6 +102,10 @@ class ShadeInput extends HTMLElement {
 	}
 
 	buildIcon() {
+		if (this.inputTypeWrapper) {
+			return this.inputTypeWrapper
+		}
+
 		const inputTypeWrapper = document.createElement('span')
 
 		const type = this.getIconType()

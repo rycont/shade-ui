@@ -1,8 +1,8 @@
-import { l as c } from "../../Link-OoiLAnWb.js";
-import { p, D as d } from "../../util-D2mgkBnY.js";
-import { s as h } from "../../style.css-Bma0hoQJ.js";
+import { l as a } from "../../Link-OoiLAnWb.js";
+import { p as c, D as h } from "../../util-D2mgkBnY.js";
+import { s as d } from "../../style.css-Bma0hoQJ.js";
 /* empty css                                  */
-const l = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+const r = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.00004 0.666626V1.99996H10V0.666626H11.3334V1.99996H14C14.3682 1.99996 14.6667 2.29844 14.6667 2.66663V13.3333C14.6667 13.7015 14.3682 14 14 14H2.00004C1.63185 14 1.33337 13.7015 1.33337 13.3333V2.66663C1.33337 2.29844 1.63185 1.99996 2.00004 1.99996H4.66671V0.666626H6.00004ZM13.3334 7.33329H2.66671V12.6666H13.3334V7.33329ZM4.66671 3.33329H2.66671V5.99996H13.3334V3.33329H11.3334V4.66663H10V3.33329H6.00004V4.66663H4.66671V3.33329Z" fill="currentColor"/>
 </svg>
 `, u = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,17 +24,17 @@ const l = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="ht
 <path d="M9.33333 1V14.6667H8V2.46933L5 3.27333V1.89267L8.33333 1H9.33333Z" fill="currentColor"/>
 </svg>
 `;
-var m = "sh-1d1c39w0", v = "sh-1d1c39w1", f = "sh-1d1c39w2", L = "sh-1d1c39w3";
-const r = "text", a = {
+var m = "sh-1d1c39w0", f = "sh-1d1c39w1", v = "sh-1d1c39w2", L = "sh-1d1c39w3";
+const l = "text", p = {
   text: V,
   password: u,
-  date: l,
-  "datetime-local": l,
+  date: r,
+  "datetime-local": r,
   email: g,
   number: H,
   disabled: w,
   search: C,
-  url: c
+  url: a
 }, e = class e extends HTMLElement {
   constructor() {
     super();
@@ -42,22 +42,26 @@ const r = "text", a = {
   connectedCallback() {
     this.input = this.buildInput(), this.classList.add(m);
     const t = this.buildIcon();
-    p(this.input, this, e.passingProps), this.appendChild(t), this.getAttribute("autofocus") !== null && this.input.focus();
+    this.inputTypeWrapper = t, c(this.input, this, e.passingProps), this.appendChild(t), this.getAttribute("autofocus") !== null && this.input.focus();
   }
   buildInput() {
+    if (this.input)
+      return this.input;
     const t = document.createElement("input");
-    return t.classList.add(v, h), this.appendChild(t), t;
+    return t.classList.add(f, d), this.appendChild(t), t;
   }
   buildIcon() {
-    const t = document.createElement("span"), i = this.getIconType(), n = a[i] || a[r];
-    t.innerHTML = n, t.classList.add(f);
+    if (this.inputTypeWrapper)
+      return this.inputTypeWrapper;
+    const t = document.createElement("span"), o = this.getIconType(), n = p[o] || p[l];
+    t.innerHTML = n, t.classList.add(v);
     const s = t.firstElementChild;
     return s == null || s.classList.add(L), t;
   }
   getIconType() {
-    return this.getAttribute("disabled") !== null ? "disabled" : this.getAttribute("type") || r;
+    return this.getAttribute("disabled") !== null ? "disabled" : this.getAttribute("type") || l;
   }
-  attributeChangedCallback(t, i, n) {
+  attributeChangedCallback(t, o, n) {
     this.input && e.passingProps.includes(t) && this.input.setAttribute(t, n);
   }
 };
@@ -92,9 +96,9 @@ e.passingProps = [
   "height",
   "width"
 ], e.observedAttributes = e.passingProps;
-let o = e;
+let i = e;
 const x = "sh-input";
-d.define(x, o);
+h.define(x, i);
 export {
   x as default
 };
